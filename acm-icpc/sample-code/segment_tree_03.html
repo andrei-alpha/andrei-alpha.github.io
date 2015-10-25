@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<head>
+  <title>ACM-ICPC @ DOC</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" title="Default" href="http://yandex.st/highlightjs/6.1/styles/school_book.min.css">
+  <style>
+    body {
+      font: small Arial, sans-serif;
+    }
+    h2 {
+      font: bold 100% Arial, sans-serif;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+    }
+    table {
+      width: 100%; padding: 0; border-collapse: collapse;
+    }
+    th {
+      width: 12em;
+      padding: 0; margin: 0;
+    }
+    td {
+      padding-bottom: 1em;
+    }
+    td, th {
+      vertical-align: top;
+      text-align: left;
+    }
+    pre {
+      margin: 0; font-size: medium;
+    }
+    #switch {
+      overflow: auto; width: 57em;
+      list-style: none;
+      padding: 0; margin: 0;
+    }
+    #switch li {
+      float: left; width: 10em;
+      padding: 0.1em; margin: 0.1em 1em 0.1em 0;
+      background: #EEE;
+      cursor: pointer;
+    }
+    #switch li.current {
+      background: #CCC;
+      font-weight: bold;
+    }
+    .test {
+      color: #888;
+      font-weight: normal;
+      margin: 2em 0 0 0;
+    }
+    .test var {
+      font-style: normal;
+    }
+    .passed {
+      color: green;
+    }
+    .failed {
+      color: red;
+    }
+    .code {
+      font: medium monospace;
+    }
+    .code .keyword {
+      font-weight: bold;
+    }
+  </style>
+
+  <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+  <script>
+  hljs.tabReplace = '    ';
+  hljs.initHighlightingOnLoad();
+  </script>
+</head> 
+ 
+<body>
+
+<h1>Java code for segment Trees</h1>
+
+<tr>
+    <th>Java code
+    <td class="java">
+<pre><code>
+import java.io.*; 
+import java.util.Scanner;
+
+public class SegmentTreesColoring {
+
+	public static Scanner stdin;
+	public static final int maxN = 1024;
+	
+	public static int[] Aint = new int[maxN * 3];
+	public static int[] Col = new int[maxN * 3];
+	public static int[] V = new int[maxN];
+	public static int N, M;
+	
+	public static void scan() throws IOException {
+		stdin = new Scanner(new File("code.in"));
+				
+		N = stdin.nextInt();
+		M = stdin.nextInt();
+		
+		for(int i = 1;i <= N;++i) {
+			V[i] = stdin.nextInt();
+		}
+	}
+	
+	public static void build(int node, int left, int right) {
+		if(left == right) {
+			Aint[node] = V[left];
+			return;
+		}
+		
+		int mid = (left + right) / 2;
+		int lnode = (node * 2);
+		int rnode = (lnode + 1);
+		
+		build(lnode, left, mid);
+		build(rnode, mid + 1, right);
+		
+		Aint[node] = Aint[lnode] + Aint[rnode];
+	}
+	
+	public static void update(int node, int left, int right, int x, int y, int val) {
+		if(x <= left && right <= y) {
+			Aint[node] = (right - left + 1) * val;
+			Col[node] = val;
+			return;
+		}
+		
+		int mid = (left + right)  / 2;
+		int lnode = (node * 2);
+		int rnode = (lnode + 1);
+		
+		if(Col[node] != 0) {
+			Col[lnode] = Col[rnode] = Col[node];
+			Aint[lnode] = (mid - left + 1) * Col[node];
+			Aint[rnode] = (right - mid) * Col[node];
+			Col[node] = 0;
+		}
+		
+		if(x <= mid)
+			update(lnode, left, mid, x, y, val);
+		if(y > mid)
+			update(rnode, mid + 1, right, x, y, val);
+		
+		Aint[node] = Aint[lnode] + Aint[rnode];
+	}
+	
+	public static int query(int node, int left, int right, int x, int y) {
+		if(x <= left && right <= y) {
+			return Aint[node];
+		}
+		
+		int mid = (left + right)  / 2;
+		int lnode = (node * 2);
+		int rnode = (lnode + 1);
+		
+		if(Col[node] != 0) {
+			Col[lnode] = Col[rnode] = Col[node];
+			Aint[lnode] = (mid - left + 1) * Col[node];
+			Aint[rnode] = (right - mid) * Col[node];
+			Col[node] = 0;
+		}
+		
+		int res = 0;
+		
+		if(x <= mid)
+			res += query(lnode, left, mid, x, y);
+		if(y > mid)
+			res += query(rnode, mid + 1, right, x, y);
+		
+		Aint[node] = Aint[lnode] + Aint[rnode];
+		return res;
+	}
+	
+	public static void solve() {
+		build(1, 1, N);
+		
+		int type, x, y, val;
+		
+		for(int i = 1;i <= M;++i) {
+			type = stdin.nextInt();
+			
+			if(type == 0) {
+				x = stdin.nextInt();
+				y = stdin.nextInt();
+				val = stdin.nextInt();
+				
+				update(1, 1, N, x, y, val);
+			}
+			else {
+				x = stdin.nextInt();
+				y = stdin.nextInt();
+				
+				int res = query(1, 1, N, x, y);
+				System.out.println(res);
+			}
+		}
+	}
+	
+	public static void main(String[] args) throws IOException {
+		
+		scan();
+		solve();
+	}
+}
+
+
+</code></pre>
+
+

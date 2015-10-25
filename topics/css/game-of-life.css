@@ -1,0 +1,41 @@
+/*the slider background*/
+.slider {
+width:230px;
+height:11px;
+background:url('../img/slider-empty.png');
+position:relative;
+margin:0;
+margin-left: 10px;
+margin-right: 10px;
+padding:0 10px;
+}
+
+/*Style for the slider button*/
+.ui-slider-handle {
+width:24px;
+height:24px;
+position:absolute;
+top:-7px;
+margin-left:-12px;
+z-index:200;
+background:url('../img/slider-button.png');
+background-size: 100% 100%;
+}
+ 
+/*This is the fill bar colour*/
+.ui-widget-header {
+background:url('../img/slider-full.png') left; 
+height:8px;
+left:1px;
+top:1px;
+position:absolute;
+}
+ 
+a {
+outline:none;
+-moz-outline-style:none;
+}
+
+#stats{
+    padding-top: 60px;
+}

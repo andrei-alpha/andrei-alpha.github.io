@@ -1,0 +1,174 @@
+[
+{
+    "id": "timeline",
+    "title": "Cellular Automata",
+    "focus_date": "1955",
+    "initial_zoom": "45",
+	"color": "#82530d",
+	"size_importance": "true",
+    "events":
+    [
+    {
+        "id": "1",
+        "title": "John von Neumann, start research on Cellular Automata",
+        "startdate": "1940",
+        
+        "description": "John von Neumann, the Hungarian-American mathematician regarded as one of the most brilliant minds of the 20th century, brought the first and most significant contributions to this field. The context is related to his study of self-replicating systems, and his design relied on the idea of a robot that builds another copy of itself.",
+        "event_type": "event",
+        "icon": "star_black.png",
+        "low_threshold": "1",
+        "high_threshold": "60",
+        "importance": "50",
+            "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/JohnvonNeumann-LosAlamos.gif/460px-JohnvonNeumann-LosAlamos.gif",
+            "link": [{"url": "http://en.wikipedia.org/wiki/John_von_Neumann", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    },
+    {
+        "id": "2",
+        "title": "John von Neumann, makes mathematical abstraction of CA",
+        "startdate": "1948",
+        
+        "description": "von Neumann soon realized that equipping the robot with the materials needed to replicate itself is not an efficient solution. Following a sugestion made by one of his colleagues, Stanislaw Ulam, who had previously dedicated some attention to the matter, he considers a new approach - mathematical abstraction.",
+        "event_type": "event",
+        "icon": "triangle_black.png",
+        "low_threshold": "1",
+        "high_threshold": "60",
+        "importance": "50",
+            "image": "http://upload.wikimedia.org/wikipedia/commons/9/9d/CA_rule30s.png",
+            "link": [{"url": "http://en.wikipedia.org/wiki/John_von_Neumann", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    },
+    {
+        "id": "3",
+        "title": "John von Neumann, develops first cellular automata",
+        "startdate": "1952",
+        "enddate": "1953",
+        
+        "description": "In 1952-1953, von Neumann developed the first cellular automaton. This is set in a two dimensional grid, with the specifications that each cell can have one of 29 possible states and interacts with its 4 neighbors (north, south, east, west). The cell space is defined of infinite size and, moreover, all the transformations across the grid occur synchronously.",
+        "event_type": "event",
+        "icon": "triangle_black.png",
+        "low_threshold": "1",
+        "high_threshold": "60",
+        "importance": "50",
+            "link": [{"url": "http://en.wikipedia.org/wiki/John_von_Neumann", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    },
+     {
+        "id": "4",
+        "title": "This is a self-replicating machine",
+        "startdate": "1953",
+        "enddate": "1954",
+        
+        "description": "This particular cellular automata is a self-replicating machine : after a certain sequence of steps and following local rules, it extends itself step-by-step until self-replication is reached. Upon this, the newly created machine is detached from the initial one.",
+        "event_type": "event",
+        "icon": "triangle_black.png",
+        "low_threshold": "1",
+        "high_threshold": "60",
+        "importance": "50",
+            "image": "http://upload.wikimedia.org/wikipedia/commons/5/50/VonNeumann_CA_demo.gif",
+            "link": [{"url": "http://upload.wikimedia.org/wikipedia/commons/5/50/VonNeumann_CA_demo.gif", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    },
+     {
+        "id": "5",
+        "title": "Influence of Neumann research",
+        "startdate": "1960",
+        
+        "description": "The influence and importance of the von Neumann CA cannot be denied, since it played a key role in understanding machine self-replication and developing universal constructor models.  Despite his connections with mathematics and physics, von Neumann's descriptions of CA lacked physical details and were more concerned with replication from the biological point of view. His perspective, aiming towards systems of great complexity, were completed and extended in some of the books of Arthur Burks.",
+        "event_type": "event",
+        "icon": "triangle_black.png",
+        "low_threshold": "1",
+        "high_threshold": "60",
+        "importance": "70",
+            "link": [{"url": "http://en.wikipedia.org/wiki/John_von_Neumann", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    },
+    {
+        "id": "6",
+        "title": "Scientific world becomes interested in CA",
+        "startdate": "1957",
+        "enddate": "today",
+        
+        "description": "After von Neumann's breakthrough, the scientific world became interested in CA. While one direction of the efforts focused towards the problem of actually building of self-replicating machines, others aimed to unravel the mathematical properties of cellular automata. Also, simpler forms of self-replicating cellular automata were discovered, and overall more attention was driven towards this topic.",
+        "event_type": "event",
+        "icon": "report.png",
+        "low_threshold": "1",
+        "high_threshold": "60",
+        "importance": "60",
+            "image": "http://www.carinsurancecomparison.com/Images/scientist-car-insurance-rates.jpg",
+            "link": [{"url": "http://en.wikipedia.org/wiki/John_von_Neumann", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    },
+    {
+        "id": "7",
+        "title": "Stanislaw Ulam start computed guided research in CA",
+        "startdate": "1960",
+        "enddate": "today",
+        
+        "description": "Around the year 1960, the same Stanislaw Ulam, together with some of his colleagues from the Los Alamos National Laboratory, performed computer tests in order to obtain recursively generated objects - essentially 2D CA applied to base building-blocks (black cells). The results showed that complicated systems may be obtained from simple growth patterns, a conclusion which was seen fairly relevant for biology, but not good enough for computational purposes.",
+        "event_type": "event",
+        "icon": "triangle_black.png",
+        "low_threshold": "1",
+        "high_threshold": "60",
+        "importance": "50",
+            "image": "http://www.atomicarchive.com/History/hbomb/images/ulam_stanislaw_s.jpg",
+            "link": [{"url": "http://en.wikipedia.org/wiki/John_von_Neumann", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    },
+    {
+        "id": "8",
+        "title": "More important theoretical questions",
+        "startdate": "1960",
+        
+        "description": "More important theoretical questions, regarding the capacities of CA to model the laws of physics itself, not only real-world derived phenomena such as reproduction, growth and evolution, were posed by Edward Fredkin. The aims of his research was to introduce physics-like models in computing, models which could preserve information, or, in other words, provide reversibility.",
+        "event_type": "event",
+        "icon": "triangle_black.png",
+        "low_threshold": "3",
+        "high_threshold": "70",
+        "importance": "50",
+            "link": [{"url": "http://en.wikipedia.org/wiki/John_von_Neumann", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    },
+     {
+        "id": "9",
+        "title": "Game of Life",
+        "startdate": "1970",
+        
+        "description": "By the mid 70's the scientific investigation on the topic has generally faded out. However, it is now when awareness is raised about CA, through the well-known 'Game of Life'. Its creator, John Conway, began experimenting different rules in 1968, and presented them in their final form in 1970. The game became popular due to Martin Gardner and the 'Scientific American' magazine. However, since Conway treated this game as a mere recreation, no thorough scientific proofs have been employed in order to discover preconditions that generate interesting behavior or models. ",
+        "event_type": "event",
+        "icon": "triangle_black.png",
+        "low_threshold": "1",
+        "high_threshold": "60",
+        "importance": "50",
+            "image": "http://www.economicsnetwork.ac.uk/cheer/ch17/hand1.gif",
+            "link": [{"url": "http://en.wikipedia.org/wiki/John_von_Neumann", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    },
+    {
+        "id": "5",
+        "title": "",
+        "startdate": "",
+        "enddate": "",
+        
+        "description": "",
+        "event_type": "event",
+        "icon": "triangle_black.png",
+        "low_threshold": "1",
+        "high_threshold": "60",
+        "importance": "50",
+            "link": [{"url": "http://en.wikipedia.org/wiki/John_von_Neumann", "label": "Wikipedia"}],
+        "ypix": "0",
+        "slug": ""
+    }
+    ]
+}
+]

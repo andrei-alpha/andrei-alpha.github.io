@@ -1,0 +1,123 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+
+        <title>Reversibility</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!--  Mobile viewport optimized: j.mp/bplateviewport-->
+        <meta name="viewport" content="width=1024,initial-scale:1.0,target-densitydpi=device-dpi">
+        <link href="css/MenuBarVertical.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/style.css"> 
+    </head>
+
+    <body>
+    <nav id="top_nav">
+        <header id="header">
+            <div id="logo-container">
+                <img class="logo" src="img/cloud.png" alt="logo"/>
+                <span class="logo">Cellular Automata and Reversible Computing</span>
+            </div>
+        </header>
+    </nav>
+    
+    <div class="clear"></div>
+    <div id="wrapper">
+        <section id="left_section">
+            <nav id="left_nav">
+                <div id="sidebar1">
+                    <ul id="MainMenu" class="MenuBarVertical">
+                    </ul> 
+                    <h3>&nbsp;</h3>
+                </div>
+            </nav>
+        </section>
+        <section id="main">
+            <section id="content">
+          		<h1>Reversible Computing and Reversible Cellular Automata</h1>
+
+                <h4>1. Introduction to reversibility</h4>	
+                    <p>Let us consider a system which can be described by a set of rules or properties. The system can be of any type, for example logical, mathematical, or physical. When our system undergoes a series of transformations that change it from an initial to a final state, we say it was affected by a process. This shifting of states means changing one or more of the variables that mathematically describe the overall state of the system. For example, in the case of thermodynamic systems, among the 'state variables' changed during a process, one could list temperature, pressure, enthalpy, volume or mass, among others. Reversibility refers to the ability of bringing a system back to its initial state knowing only the final state, that induced by the process it underwent.</p>
+                <h4>2. Reversible computing</h4>
+                    <p>In computational theory, the concept raised a model known as Reversible Computing. In this model, we are concerned with certain types of reversibility of a computational process. We can choose to represent possible transitions within a system using a number of transition functions. Reversible systems require a one-to-one mapping between 'predecessors' and 'successors' via these transition functions, such that we can always find the initial state which produced a final state using a certain transformation. The two types of reversibility we are concerned with  are physical and logical.<p>
+                <h4>3. Physical reversibility</h4>
+                    <p>Physical reversibility is one type of reversibility which is of interest for this field. A  process is said to be physically reversible if it is isentropic, i.e it does not change the entropy of the system (entropy is a measure of how evenly energy is distributed in a system, or in other words, a measure of the energy not available for work during a process). In practice, however,no non-stationary physical process can be perfectly reversible. On the other hand, in a system with well defined rules and lacking interactions with external environments, there is no limit on how close it can approach perfect reversibility. According to the von Neumann - Landauer limit, there is a lower bound on how much energy is required to change one single bit of information. Albeit challenged in recent years, the limit is still accepted as a valid physical law. Therefore, one of the main purposes of studying (physical) computational reversibility is to defy this inferior limit and try to obtain a better efficiency for computers.</p>
+                <h4>4. Logical reversibility</h4> 
+                    <p>The second type of reversibility we are concerned with is logical reversibility. Invariably, any computer deals with processes that involve taking some input values and producing output values. However, most of these operations, such as deletions, insertions, overwriting, dispose of certain information related to the earlier history of the program or the system which operates them. In this sense, we say the system is logically irreversible - the aforementioned transition functions mapping initial states to final states are not one-to-one. Despite the fact that some specific operations can be reversed, Landauer argued that irreversibility cannot be avoided in general situations, proving this similarly using the von Neumann - Landauer limit.</p>
+                    <p>As a conclusion, physical and logical reversibility are only subtly distinct and intertwined, since each relies, at least to some extent, on the other to justify its own self. Through them, reversible computing becomes an interesting and highly unconventional topic, which could bring interesting, even revolutionary results.</p>
+                <h1>Reversible Cellular Automata</h1>
+                    <table> <tr>
+                    <td> <img src="img/reversible_03.jpg"></img> </td>
+                    <td> <p>There are some cellular automata for which each configuration has an unique preceding configuration - such CAs are called reversible, microscopically reversible or invertible. RCA actually represent a natural model of Reversible Computing and are analogous with a number of natural processes. The figure below shows examples of reversible CA by means of Wolfram's rules.</p> </td>
+                    </tr> </table>
+                
+                    <p>Although some of the 'state variables' analogous to physical systems, such as locality or uniformity, are present and taken as granted within Cellular Automata, reversibility itself is not built-in - one has to program it.  Initially, it was thought that by introducing reversibility, key properties such as universality in computation and construction would be lost, but this is not the case. Moreover, techniques have been developed so that one can construct systematically RCA which display perfect reversibility.</p>
+                    <p>Firstly, we must establish that a Cellular Automaton is a deterministic system - this means that any state the system may be in can only generate one successor state according to the given set of rules. Intuitively, for a CA to be reversible, we need a rule, an inverse rule, that would perform backward-determinism as well. This second rule is, in the vast majority of cases, different from the original rule, perhaps with the exception of trivial CAs. This is equivalent to saying that by mapping the set of rules that perform transformations to a mathematical function, that function would be a bijection. Theoretically, it is possible to decide whether two given rules are inverses of each other, but, on the other hand, there are no ways of determining the inverse (if it exists) of a single given rule. We will now investigate two important known methods for constructing invertible Cellular Automata.</p>
+                <h4>1. The second order technique</h4>
+                    <p>This method relies on storing the last two states of a cell, not just the immediately previous state. These two pieces of information alone are sufficient for producing a reversible computation. Therefore, a cell's state at a moment t+1  depends on the cell's neighbourhood's state at time t and its own state at t-1. This concept is explained very simply by Tommaso Toffoli and Norman Margolus in one of their most important works:</p>
+                    <p><i>[..] if we cut a single frame out of the movie of a flying bullet, we have no way of knowing what the bullet is doing. However, if we are given two consecutive frames, then we can figure out the bullet's trajectory. That is, from these two frames, interpreted as the bullet's "past" and "present" positions, we can construct a third frame giving the bullet's "future" position; this procedure can be iterated. The laws of Newtonian mechanics are such that, if for some reason the two frames got exchanged, we would end up figuring the bullet's trajectory &lt; in reverse &gt; </i></p>.
+                    <b><i>Cellular Automata Machines: A new environment for modelling (Tommaso Toffoli, Norman 		Margolus), 1987, The MIT Press, ISBN 0-262-20060-0, page 147</i></b>
+                    
+                    <table> <tr>
+                    <td> <img src="img/reversible_02.jpg"></img> </td>
+                    <td> <p>Simple 1D CA construction rules and configurations can be extended to also support reversibility. An illustration of how the second order technique works for a 1D CA is shown here.</p></td>
+                    </tr> </table>
+                
+                <h4>2. The partitioning technique</h4>
+                    <p>The previous technique which we considered involved using mathematical functions to describe how cells evolve using information from their two last states. Essentially, the function we need to describe state transitions would perform certain calculations, mostly on real numbers. The problem with real number operations is that they involve a certain degree of information loss, through procedures like rounding, truncating, squaring and others. The result, on the other hand, involved no information loss since it guarantees invertibility. The partitioning technique offers a different and more straightforward and obvious way of  generating reversible cellular automata.</p>
+          
+                    <table> <tr>
+                    <td>
+                        <img src="img/reversible_01.jpg"></img>
+                    </td>
+                    <td>
+                        <p>Perhaps the most famous partitioning scheme is the Margolus neighbourhood. Firstly, this involves partitioning the grid of cells into a collection of finite, uniform and disjoint blocks (most commonly 2x2 blocks). It then uses a 'block rule', applicable to all the resulted blocks, which updates them as a whole, rather than as individual cells, like in traditional Cellular Automata. Moreover, no information is exchanged between neighbouring blocks nor do the blocks overlap. Lastly, and perhaps most important, we need to change the partition from step to step, so that we will not end up with a number of isolated 2x2 systems.</p>      
+                        
+                    </td>
+                    </tr> </table>
+                    
+                    <p>Usually, we consider two alternating types of steps, when we use either the 'even' grid (the blue lines above) or the 'odd' grid (the red dotted lines). Therefore, a cell may be considered as within an odd-aligned block or an even-aligned block, depending on the nature of the four lines delimiting it.</p>
+                    <p>This form of dealing with CA means that at each time, the block has as inputs the four states of the cells it contains and produces exactly outputs. Therefore, this cellular automaton is made out of sub-divisions which produce as many outputs as inputs they require - it is information-lossless.</p>
+                    <p>For a rule of a Margolus neighbourhood to be invertible, it needs to establish a one-to-one correspondence between the old and new states of a 2x2 block. For example, in a CA with two states and partitioned into 2x2 blocks, such a rule requires 16 mappings from old to new states. After we have this invertible rule, the only action we need to perform to revert our CA is to simply perform the 'inverse' steps in reverted order, taking care to consider the appropriate partition each time (either odd-aligned or even-aligned blocks).</p>
+                    
+                <h4>Applications</h4>
+                    We have discussed two ways of obtaining reversible CA quite easily. But what exactly are the applications of Reversible Cellular Automata? Among them we can count:
+                    <table> <tr> 
+					<td> </td> <td> <li>Ising model (used to simulate the behaviour of magnetic systems) can be investigated using reversible CA.</li>
+                    </td> <li>Lattice gas automata are implemented using reversible CA. Their purpose is to simulate the movement of particles of an ideal fluid or gas. HPP or FHP are examples of these lattice gas models, which simulate particles moving in 4 and 6 directions respectively.</li>
+                    <li>Proposals have been made by Jarkko Kari (1990), Chai, Cao and Zhou (2005) to use reversible CA to model an alternative encryption system.</li>
+                    <li>Quantum cellular automata, designed to obey the laws of quantum dynamics, have features whose understanding depends on considering CA reversibility.</li>
+                    </tr> </table>
+			        </section>
+        </section>
+    <div class="clear"></div>
+    </div>
+    
+    <!--Menu Bar Vertical script -->
+    <script type="text/javascript" src="js/MenuBarVertical.js"></script>
+    
+    <!-- jquery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <!-- data table -->
+    <script type="text/javascript" src="js/menuData.js"></script>
+
+    <footer id="footer">
+        <div class="footer_box">
+            © Irina Veliche, Andrei Antonescu, Paul Colea, Mihai Condur &reg; <span id="version"></span> – &copy; 2012 <a href="http://www3.imperial.ac.uk/" target="Imperial">http://www3.imperial.ac.uk/</a><div class="confidential">Group 10</div>
+        </div>
+    </footer>
+     
+    </body>
+</html>

@@ -1,0 +1,212 @@
+[
+    {
+        "question": "On what theorem is based the fact that the expansion of the two-dimnensional cellular automata with class-3 behaviour tends to result in an asymptotically circular difference pattern? ",
+        "answers": [
+            "Normal form theorem",
+            "Central limit theorem",
+            "Curtis-Hedlund-Lyndon theorem"
+        ],
+        "correct": "Central limit theorem",
+        "info": "The expansion occurs at the same speed in all direction, thus resulting in an asymptotically circular difference pattern.Even when the difference is not circular, they tend to have rounded corners. The explanation for this in based on the central limit theorem."
+    },
+    {
+        "question": "In the totalistic cellular automata, on what depends the value of a cell?",
+        "answers": [
+            "It depends on the sum of the values of the sites in the neighbourhood.",
+            "It is determined by the values of the sites in its neighbourhood on the previous time step and by a set of rules.",
+            "It is a special type of cellular automata, which has unpredictable behaviour."
+        ],
+        "correct": "It depends on the sum of the values of the sites in the neighbourhood.",
+        "info": "A special class of cellular automatons is the totalistic CAs. The state of each cell is represented by a number that depends on the sum of the values of the sites in the neighbourhood."
+    },
+    {
+        "question": "What class of cellular automata is generally capable of implementing information-processing procedures?",
+        "answers": [
+            "Class-2",
+            "Class-3",
+            "Class-4"
+        ],
+        "correct": "Class-4",
+        "info": "Class-4 exhibit localized and propagating structures, generally being capable of implementing information-processing procedures."
+    },
+    {
+        "question": "When was Conway's Game of Life featured in the Scientific American magazine, marking its first appearance before the eyes of a wider public?",
+        "answers": [
+            "October 1970.",
+            "September 1970.",
+            "August 1970."
+        ],
+        "correct": "October 1970.",
+        "info": "Martin Gardner wrote an interesting article on Game of Life in october 1970. It presented the key aspects of Life, as well as its rules and various patterns. It is probably through this article that Game of Life reached its popularity."
+    },
+    {
+        "question": "In the Game of Life, when does a cell die out?",
+        "answers": [
+            "When it has greater than or equal to three live neighbours.",
+            "When it has less than two or more than three live neighbours.",
+            "When it has one live neighbour."
+        ],
+        "correct": "When it has less than two or more than three live neighbours.",
+        "info": "A cell with less than 2 live neighbours dies, as if by isolation. Conversely, a cell with more than 3 live neighbours also dies, as if by overcrowding."
+    },
+    {
+        "question": "How do transitions between the grid's states occur in Game of Life?",
+        "answers": [
+            "Firstly we compute the new state's births, then we use those to generate the new state's deaths.",
+            "Firstly we compute the new state's deaths, then we use those to generate the new state's births.",
+            "All transitions occur synchronously on the grid."
+        ],
+        "correct": "All transitions occur synchronously on the grid.",
+        "info": "Understanding that the transitions occur in a synchronous manner raise quite a challenge for Game of Life enthusiasts in early days, when not all had private computers and the Game was played with pencil and paper. One simple error in establishing the deaths or births that arise from a state usually compromises the Game's correctness."
+    },
+    {
+        "question": "Who is considered to be the most important founder of the concept of Cellular Automata?",
+        "answers": [
+            "John Horton Conway.",
+            "John von Neumann.",
+            "Edward Fredkin."
+        ],
+        "correct": "John von Neumann.",
+        "info": "The Hungarian-American mathematician John von Neumann is considered one of the brightest minds of the last century and has given a huge contribution to fields such as mathematics, computer science, statistics, quantum mechanics,or fluid dynamics. In the field of CA, he was among the first who considered research on this topic, and he also built the first widely-known CA in 1952-1953."
+    },
+    {
+        "question": "How many states did the intial von Neumann cellular automaton have?",
+        "answers": [
+            "28.",
+            "29.",
+            "32."
+        ],
+        "correct": "29.",
+        "info": "von Neumann's cellular automaton is set in a two dimensional and it has a total of 29 possible states. Each cell interacts only with its North, South, East and West neighbours."
+    },
+    {
+        "question": "What is the so-called partitioning technique used for?",
+        "answers": [
+            "For investigating the properties of glider guns in Game of Life.",
+            "For generating reversible cellular automata.",
+            "For obtaining small oscillating patterns in Game of Life."
+        ],
+        "correct": "For generating reversible cellular automata.",
+        "info": "The partitioning technique is one of the most used techniques for obtaining various types of reversible cellular automata. It requires a certain partitioning scheme, which essentially refers to a way of grouping cells in blocks. One of the most common partitioning schemes is the Margolus neighbourhood."
+    },
+    {
+        "question": "What is the Margolus neighbourhood?",
+        "answers": [
+            "A name for a cell configuration which has no possible predecessor.",
+            "A way of partitioning cells into blocks of cells, by means of which reversibility can be potentially achieved.",
+            "A rarely obtainable configuration in Game of Life."
+        ],
+        "correct": "A way of partitioning cells into blocks of cells, by means of which reversibility can be potentially achieved.",
+        "info": "The Margolus neighbourhood, introduced by Norman Margolus, is one of the most common partitioning schemes used to obtain reversible CA. We usually split the cells in 2x2 blocks, and then, using a 'block rule', we update all blocks similarly, instead of individual cells.  Moreover, no information is exchanged between neighboring blocks nor do the blocks overlap. Lastly, and perhaps most important, we need to change the partition from step to step, so that we will not end up with a number of isolated 2x2 systems."
+    },
+    {
+        "question": "What does the von Neumann - Landauer limit describe?",
+        "answers": [
+            "It gives an upper bound to the amount of physical energy which can be used to erase a byte of data.",
+            "It gives a lower bound on the amount of energy required to change one byte of information.",
+            "It gives a lower bound on the amount of energy required to change one bit of information."
+        ],
+        "correct": "It gives a lower bound on the amount of energy required to change one bit of information.",
+        "info": "The von Neumann - Landauer limit is a mathematical expression which gives the smallest amount of physical energy needed for changing one bit of data. The expression k*T*ln2 (where k is the Boltzmann constant, T is the circuit's temperature in Kelvins and ln2 is the natural logarithm of 2, approximately 0.6932), was suggested by von Neumann and proved rigorously by Landauer."
+    },
+    {
+        "question": "How many possible patterns are for a neighbourhood in the case of one-dimensional cellular automata?",
+        "answers": [
+            "8",
+            "16",
+            "2"
+        ],
+        "correct": "8",
+        "info": "The one-dimensional cellular automata has two possible values for each cell, 0 or 1, and the rules depend on its neighbourhood, that is the two cells near it, so there are 2 to the power of 3 = 8 possible patterns for a neighbourhood. "
+    },
+    {
+        "question": "What do the phases in the evolution of cellular automata have as parameters?",
+        "answers": [
+            "sites that can have values of 0 or 1",
+            "spatially aperiodic patterns",
+            "spatially periodic patterns"
+        ],
+        "correct": "spatially periodic patterns",
+        "info": "Phases in the evolution of cellular automata have as parameters spatially periodic patterns."
+    },
+    {
+        "question": "What is the main characteristic of class-3 cellular automata?",
+        "answers": [
+            "evolve to homogeneous final states",
+            "yield separated periodic structure, analogous to limit cycles",
+            "yield aperiodic patterns, exhibiting chaotic behaviour, found in some continuous dynamical systems"
+        ],
+        "correct": "yield aperiodic patterns, exhibiting chaotic behaviour, found in some continuous dynamical systems",
+        "info": "Class-3 yield aperiodic patterns, exhibiting chaotic behaviour, found in some continuous dynamical systems."
+    },
+    {
+        "question": "What are simple seeds?",
+        "answers": [
+            "small regions of non-zero sites in a background of zeroes",
+            "the values of the sites are randomly chosen to be 1 or 0",
+            "small regions of zero sites in a background of non-zeroes."
+        ],
+        "correct": "small regions of non-zero sites in a background of zeroes",
+        "info": "Simple seeds consist of small regions of non-zero sites in a background of zeroes."
+    },
+    {
+        "question": "LogiCell is the creation of:",
+        "answers": [
+            "Tommaso Toffoli",
+            "Jean-Philippe Rennard",
+            "David Bell"
+        ],
+        "correct": "Jean-Philippe Rennard",
+        "info": "The LogiCell applet can create logical equations in the Game of Life. It can be found at www.rennard.org ."
+    },
+    {
+        "question": "A Unit Life Cell simulates:",
+        "answers": [
+            "A Turing Machine",
+            "A glider",
+            "A cellular automaton cell"
+        ],
+        "correct": "A cellular automaton cell",
+        "info": " In Alan Hensel’s lexicon, it is defined as a pattern with two states, which is determined by its previous state and the previous state of its neighbours, using exactly the rules used to compute it. "
+    },
+    {
+        "question": "A difference between a specific and a universal Turing Machine is:",
+        "answers": [
+            "The program(s) it can run",
+            "The shape of the tape",
+            "The price of the components"
+        ],
+        "correct": "The program(s) it can run",
+        "info": "The specific machine only runs while programs, while the universal version can simulate all other Turing Machines"
+    },
+    {
+        "question": "Which is an oblique spaceship?",
+        "answers": [
+            "The glider",
+            "The LWS",
+            "Gemini"
+        ],
+        "correct": "Gemini",
+        "info": "Gemini is the first oblique spaceship and it moves by self-replication."
+    },
+    {
+        "question": "Which pattern does not grow forever?",
+        "answers": [
+            "The Gosper glider gun",
+            "The R-pentomino",
+            "A spacefiller"
+        ],
+        "correct": "The R-pentomino",
+        "info": "The R-pentomino eventually dies out, leaving only simple oscillators, still lives and escaped gliders."
+    },
+    {
+        "question": "Why is the Universal Computer Constructor called 'Spartan'?",
+        "answers": [
+            "It is composed of small still lives ",
+            "It resists all cryptographic attacks",
+            "There are only 300 in operation"
+        ],
+        "correct": "It is composed of small still lives",
+        "info": "The Computer's components have at most 8 live cells each, thus the name Spartan."
+    }
+]

@@ -1,0 +1,82 @@
+html{
+    height: 100%;
+    min-width: 1200px;
+    min-height: 600px;
+    background-image: url('background.png'), url('circles.png');
+    background-repeat:no-repeat, no-repeat;
+    background-position: right bottom, left bottom;
+    background-size: [100, 100], 100% 100%;
+}
+
+#top-logo{
+    margin-left: 10px;
+    margin-top: 30px;
+    height: 28px;
+    width: 31.4%;
+    background-image: url('logo.png');
+    background-repeat:no-repeat;
+    background-position: left;
+    background-size: 100% 100%;
+}
+
+#text{
+    z-index: 2;
+    position: absolute;
+    right: 17%;
+    bottom: 12%;
+    font-size: 350%;
+    font-style: italic;
+    font-family: sans-serif;
+}
+
+#bottom-logo{
+    z-index: -2;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 32.2%;
+    height: 64.2%;
+}
+
+.author{
+    z-index: 4;
+    position: absolute;
+    bottom: 10px;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    font-family: sans-serif;    
+}
+
+#author-left{
+    right: 43%;
+}
+
+.text{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-right: 25px;
+}
+
+#desc{
+    padding-top: 10px;
+}
+
+#share{
+    z-index: -4;
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    width: 500px;
+    height: 75px;
+}
+
+#plus{
+    padding-right: 20px;
+}
+
+#author-right{
+    right: 4%;
+}

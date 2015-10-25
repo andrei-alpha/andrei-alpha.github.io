@@ -1,0 +1,51 @@
+<html id="html">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fractals</title>
+    <link rel="stylesheet" href="css/style.css"></>
+</head>
+    
+<body id="body" onmouseup="canvas_onmouseup();" onmousemove="canvas_onmousemove(event);">
+    <select id="select-menu-fractal" onchange="redraw()">
+        <option value="mandelbrot-1">Mandelbrot (z^2 + c)</option>
+        <option value="mandelbrot-2">Mandelbrot (z^3 + c)</option>
+        <option value="mandelbrot-3">Mandelbrot (z^3 + z^2 + z + c)</option>
+        <option value="julia-1">Julia (-0.8 + 0.156i)</option>
+        <option value="julia-2">Julia (-0.618)</option>
+        <option value="julia-3">Julia (-0.4 + 0.6i)</option>
+        <option value="julia-4">Julia (0.285 - 0.01i)</option>
+        <option value="newton">Newton</option>
+    </select>
+
+    <select id="select-menu-theme" onchange="changeColor()">
+        <option value="theme-1">Green</option>
+        <option value="theme-2">Orange</option>
+        <option value="theme-3">Costum</option>
+        <option value="theme-4">Blue</option>
+        <option value="theme-5">Red</option>
+        <option value="theme-6">Black & White</option>
+    </select>
+    
+    <table>
+        <tr><td> <button id="zoom-out" onclick="zoom_out()">Zoom Out +</button> </td></tr>
+        <tr><td> <button id="zoom-in" onclick="zoom_in()" >Zoom In -</button> </td></tr>
+    </table>
+
+    <div id="wrapper">
+        <canvas width="612px" height="612px" id="canvas" onmousedown="canvas_onmousedown(event);"></canvas>
+        <div id="zoom"></div>
+    </div>
+   
+</body>
+    <!-- jquery minified version -->
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="js/complex.js"></script>
+    <script type="text/javascript" src="js/fractals.js"></script>
+    <script type="text/javascript" src="js/colors.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <p id="credits-1">Fractal Art</p>
+    <p id="credits-2"> andreibantonescu © 2012</p>
+
+</html>

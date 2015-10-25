@@ -1,0 +1,89 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+
+        <title>Turing Machines</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!--  Mobile viewport optimized: j.mp/bplateviewport-->
+        <meta name="viewport" content="width=1024,initial-scale:1.0,target-densitydpi=device-dpi">
+        <link href="css/MenuBarVertical.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/style.css"> 
+    </head>
+
+    <body>
+    <nav id="top_nav">
+        <header id="header">
+            <div id="logo-container">
+                <img class="logo" src="img/cloud.png" alt="logo"/>
+                <span class="logo">Cellular Automata and Reversible Computing</span>
+            </div>
+        </header>
+    </nav>
+    
+    <div class="clear"></div>
+    <div id="wrapper">
+        <section id="left_section">
+            <nav id="left_nav">
+                <div id="sidebar1">
+                    <ul id="MainMenu" class="MenuBarVertical">
+                    </ul> 
+                    <h3>&nbsp;</h3>
+                </div>
+            </nav>
+        </section>
+        <section id="main">
+            <section id="content">
+                <h1>Turing Machines</h1>
+                <p><b>Turing machine 1</b> is a hypothetical device, consisting of “...an infinite memory capacity obtained in the form of an infinite tape marked out into squares, on each of which a symbol could be printed. At any moment there is one symbol in the machine; it is called the scanned symbol. The machine can alter the scanned symbol and its behavior is in part determined by that symbol, but the symbols on the tape elsewhere do not affect the behaviour of the machine.” (In the words of Alan Turing, in the article which originally described it).</p>
+                
+                <table cellpadding="10px"> <tr>
+                <td> <p>With the right modifications, a Turing machine can be made to simulate any computer algorithm. Based on the clues presented until now, it was suspected that the Game of Life has such a capacity. Building a Turing machine inside the game universe would answer the question once and for all, and in 2000 Paul Rendell successfully built such a device, describing it in great detail in the paper “A Turing Machine in Conway’s Game of Life” (30/08/01).</p> </td>
+                <td> <img src="img/turing_machines_01.png"></img> </td>
+                </tr> </table>
+                
+                <table> <tr>
+                <td> <p>This is an example of a specific machine, meaning that it only runs a certain program, in this case one which duplicates a pattern of 1s. However, Rendell designed it such that in could be extended to become a Universal Turing Machine.</p> </td>
+                <td> <img src="img/turing_machines_02.png"></img> </td>
+                </tr> </table>
+                
+                <p><b>Turing machine 2</b> - In 2010 Rendell returned to his original Turing Machine design and, by greatly extending its memory capacity (using “stack cells” connected together), managed to create the Universal Turing Machine. It is capable of simulating all other Turing Machines, thus running any conceivable program.</p>
+                
+                <table><tr>
+                <td> <p>Of course, as a consequence, every aspect had to be scaled up: one cycle of the UTM takes 79*240 generations, compared to the 46*240 needed for the TM. The new machine has 252192 cells, 13 possible states and 8 tape symobls.</p></td>
+                <td> <img src="img/turing_machines_03.png"></img> </td>
+                </tr></table>
+                
+            </section>
+        </section>
+    <div class="clear"></div>
+    </div>
+    
+    <!--Menu Bar Vertical script -->
+    <script type="text/javascript" src="js/MenuBarVertical.js"></script>
+    
+    <!-- jquery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <!-- data table -->
+    <script type="text/javascript" src="js/menuData.js"></script>
+
+    <footer id="footer">
+        <div class="footer_box">
+            © Irina Veliche, Andrei Antonescu, Paul Colea, Mihai Condur &reg; <span id="version"></span> – &copy; 2012 <a href="http://www3.imperial.ac.uk/" target="Imperial">http://www3.imperial.ac.uk/</a><div class="confidential">Group 10</div>
+        </div>
+    </footer>
+     
+    </body>
+</html>

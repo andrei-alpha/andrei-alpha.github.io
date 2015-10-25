@@ -1,0 +1,68 @@
+#answers-table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#button-start{
+    margin-top: 100px;
+    color: #008000;
+    font-style: normal;
+}
+
+#button-start:hover{
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+}
+
+#table-div{
+    float: right;
+}
+
+#info{
+    min-height: 300px;
+    width: 200px;
+    padding: 10px 10px 10px 10px;
+    float: left;
+    border: 3px solid #008000;
+    display: block;
+    border-radius: 20px;
+}
+
+.answer{
+    display: none;
+    padding-left: 40px;
+    background-color: white;
+    width: 500px;
+    height: 38px;
+    border-radius: 99px;
+    cursor: pointer;
+}
+
+.answer:hover{
+    /*background-color: blue;*/
+    /*color: white;*/
+    font-weight: bold;
+}
+
+.answer-img{
+    display: none;
+    position: absolute;
+    z-index: 4;
+    margin-right: -15px;
+    margin-top: -20px;
+}
+
+#stats{
+    display: none;
+    float: left;
+    margin-left: 100px;
+    margin-top: 140px;
+}
+
+#next{
+    float: right;
+    margin-top: 140px;
+    padding-left: 0px;
+    width: 100px;
+}

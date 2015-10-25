@@ -1,0 +1,33 @@
+#irina{
+	width: 25%;
+	float: left;
+	text-align:center
+}
+
+#mihai{
+	width: 25%;
+	float: left;
+	text-align:center
+}
+
+#paul{
+	width: 25%;
+	float: right;
+	text-align:center
+}
+
+#andrei{
+	width: 25%;
+	float: right;
+	text-align:center
+}
+
+#team{
+	width: 100%;
+	height: 300px;
+}
+
+#data{
+    display: none;
+}
+~                        
