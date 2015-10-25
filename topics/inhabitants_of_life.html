@@ -1,0 +1,184 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+
+        <title>Inhabitants of Life</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!--  Mobile viewport optimized: j.mp/bplateviewport-->
+        <meta name="viewport" content="width=1024,initial-scale:1.0,target-densitydpi=device-dpi">
+        <link href="css/MenuBarVertical.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/style.css"> 
+    </head>
+
+    <body>
+    <nav id="top_nav">
+        <header id="header">
+            <div id="logo-container">
+                <img class="logo" src="img/cloud.png" alt="logo"/>
+                <span class="logo">Cellular Automata and Reversible Computing</span>
+            </div>
+        </header>
+    </nav>
+    
+    <div class="clear"></div>
+    <div id="wrapper">
+        <section id="left_section">
+            <nav id="left_nav">
+                <div id="sidebar1">
+                    <ul id="MainMenu" class="MenuBarVertical">
+                    </ul> 
+                    <h3>&nbsp;</h3>
+                </div>
+            </nav>
+        </section>
+        <section id="main">
+            <section id="content">
+                <h1>Inhabitants of Life</h1>
+                <p><b>Still lives</b> – These patterns are distinguishable by a simple feature – they remain the same from one generation to another. In a sense they are oscillators with period 1. Small still lives, such as the block, often occur naturally in the evolution of a random pattern, and form the main part of what remains after changes “die out”.</p> 
+                
+                <p>Finding new, ever more elaborate still lives can be an interesting puzzle, undertaken by many enthusiasts, starting from Life’s creator, John Conway, who computed all possible still lives between 4 and 7 cells. With the advent of increasingly powerful personal computers, it became possible to do exhaustive searches in larger spaces. For example, Mark Niemiec created a list of all possible still lives between 15 and 24 cells.</p>
+                
+                <p>What are still lives good for, other than sitting there and looking pretty? A special subcategory, the eaters, has a crucial role in creating logic circuits, by absorbing gliders and other objects. For more on this subject, see the Constructs section. </p>
+                <table cellpadding="10px" >
+                <tr>
+                    <td> <img src="img/inhabitants_of_life_01.png"></img> </td>
+                    <th> Block </th>
+                    <td> <p>The block is the most common-occurring still life – it will form a substantial part of “ash” – the debris left behind by changing patterns.  At 4 cells, it is tied with the tub as the smallest still life.</p> </td>
+                </tr> <tr>
+                    <td> <img src="img/inhabitants_of_life_02.png"></img> </td>
+                    <th> Beehive </th>
+                    <td> <p>Another common still life, it is produced by the queen bee shuttle, a component of the basic glider gun. </p> </td>
+                </tr> <tr>    
+                    <td> <img src="img/inhabitants_of_life_03.png"></img> </td>
+                    <th> Spiral </th>
+                    <td> <p>The spiral, consisting of a tub and four tails, has the remarkable property of quarter-rotation symmetry. </p> </td>
+                </tr>
+                </table>
+                
+                <p><b> Oscillators </b> - Oscillators are patterns that are their own predecessors. They range from repeating themselves every two generations (period-2), to very long cycles (period-15 and more). All glider guns, for example, contain oscillators.</p>
+                <table cellpadding="10px">
+                <tr>
+                    <td> <img src="img/inhabitants_of_life_04.png"></img> </td> 
+                    <th> Blinker </th>
+                    <td> <p>The blinker, a period-2 oscillator, is the most common naturally occurring pattern in the Game of Life.</p> </td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_05.png"></img> </td> 
+                    <th> Toad </th>
+                    <td> <p>The toad is the second most common naturally occurring oscillator. When arranged in pairs, it can eat various patterns such as middle and heavy-weight spaceships. Such a pair is called “killer toads”.</p> </td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_06.png"></img> </td>
+                    <th> Pentadecathlon </th>
+                    <td> <p>This period-15 oscillator is formed from a row of 10 cells, and has various uses, most notably as a glider reflector.</p> </td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_07.png"></img> </td>
+                    <th> Pulsar </th>
+                    <td> <p>This is one of the most beautiful oscillators, comprised from 4 symmetric quarters, which can be isolated using special techniques and attached to other oscillators.</p> </td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_08.png"></img> </td>
+                    <th> P30 </th>
+                    <td> <p>Formed by stabilizing a queen bee shuttle with two blocks, this oscillator is the precursor of the glider gun, and thus vital to what has come to be known as “p-30 technology”.</p> </td>
+                </tr>  
+                </table>
+                
+                <p><b>Gliders / Spaceships</b> - These are objects that travel from one place to the other. Their speed cannon exceed the “speed of light” - c, one square per generation.</p> 
+                
+                <!--<p><b> Basic Glider </b> The first moving pattern to be discovered, the glider travels diagonally and almost always appears in the evolution of random patterns.</p>
+                --> <table cellpadding="10px">
+                <tr>
+                    <td> <img src="img/inhabitants_of_life_20.png"></img> </td>
+                    <th style="padding-left: 160px;"> Basic Glider </th>
+                    <td> The first moving pattern to be discovered, the glider travels diagonally and almost always appears in the evolution of random patterns.</p></td>
+                </tr></table>
+                <table cellpadding="10px">
+                <tr>
+                    <td> <img src="img/inhabitants_of_life_10.png"></img> </td>
+                    <td> <img src="img/inhabitants_of_life_09.png"></img> </td>
+                    <td> <img src="img/inhabitants_of_life_11.png"></img> </td>
+                    <td> <p><b> Space Ships </b> Besides the glider, there are various other spaceships. The most common are the Lightweight, Middleweight and Heavyweight spaceships, which are similar apart from their size. They all travel at c/2 orthogonally.</p></td>
+                </tr>
+                </table>
+                
+                <p><b> Methuselahs </b> - These are small patterns that evolve into large clusters which take many generations to stabilize. For a while, they look like the will live forever, hence the name. </p>
+                <table cellpadding="10px">
+                <tr>
+                    <td> <img src="img/inhabitants_of_life_12.png"></img> </td>
+                    <th> R-Pentomino </th>
+                    <td> <p>This small pattern only stabilizes after 1103 generations. The first glider to be observed came from the study of this pattern’s evolution.</p> </td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_13.png"></img> </td>
+                    <th> B-Heptomino </th>
+                    <td> <p>Although this pattern has a shorter lifespan, 148 generations, it is very important in the construction of “B-Tracks”(discovered by David Buckingham), made of conduits which transport objects from one place to the other, without being damaged themselved.</p> </td>
+                </table>
+                
+                <p><b>Constructs</b> - This group includes patterns from all the other categories, but focuses on the ones created and/or used by humans with specific purposes in mind. They are akin to functional blocks in hardware design: by combining them, we can create systems of arbitrary complexity, which can ultimately perform a huge variety of computations.</p>
+                <table cellpadding="10px">
+                <tr>
+                    <td><b>Eaters</b>
+                    <p>These still lives have the property of absorbing other patterns (often gliders), ideally without being destroyed in the process. They can be used to block glider streams and to contain the various by-products of other constructs.</p></td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_14.png"></img> </td>
+                    <th>Fishhook</th>
+                    <td><p>This is the first eater to be discovered. It can absorb an incoming glider and recover in only four generations. It is also capable of eating a variety of other patterns, like other spaceships.</p></td>
+                </tr><tr>
+                    <td> <b>Guns</b>
+                    <p>Guns are constructs that periodically emit spaceships, usually gliders. They form the backbone of any logical system. By shooting a constant stream of gliders, a gun can be akin to the VCC in hardware.</p></td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_15.png"></img> </td>
+                    <th>Basic Glider Gun</th>
+                    <td><p>The origin of this gun is, like many innovations, a challenge. It was created by Bill Gosper in 1970, disproving Conway’s conjecture that no pattern can exhibit infinite growth.</p></td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_16.png"></img> </td>
+                    <th>BI-Gun</th>
+                    <td><p>This is a double-barreled version of the gun, courtesy of the same Bill Gosper</p></td>
+                </tr><tr>
+                    <td> <b>Puffers</b>
+                    <p>Puffers are moving objects which leave a trail of “debris” in their way.</p></td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_17.png"></img> </td>
+                    <th> Puffer-1 </th>
+                    <td><p>The puffer-1 was the first ever to be discovered, and it leaves behind trails of blinkers.</p></td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_18.png"></img> </td>
+                    <th> Space Rake </th>
+                    <td><p>The Space Rake leaves behind a trail of gliders instead of oscillators and still lives.</p></td>
+                </tr><tr>
+                    <td> <img src="img/inhabitants_of_life_19.png"></img> </td>
+                    <th>Spacefiller</th>
+                    <td><p>A Spacefiller is a special pattern discovered using computerized search, it expands forever, filling the universe with a stripe pattern. “Max”, pictured to the left, discovered by Tim Coe, is the smallest ever known.</p></td>
+                </tr>
+                </table>
+                
+            </section>
+        </section>
+    <div class="clear"></div>
+    </div>
+    
+    <!--Menu Bar Vertical script -->
+    <script type="text/javascript" src="js/MenuBarVertical.js"></script>
+    
+    <!-- jquery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <!-- data table -->
+    <script type="text/javascript" src="js/menuData.js"></script>
+
+    <footer id="footer">
+        <div class="footer_box">
+            © Irina Veliche, Andrei Antonescu, Paul Colea, Mihai Condur &reg; <span id="version"></span> – &copy; 2012 <a href="http://www3.imperial.ac.uk/" target="Imperial">http://www3.imperial.ac.uk/</a><div class="confidential">Group 10</div>
+        </div>
+    </footer>
+     
+    </body>
+</html>

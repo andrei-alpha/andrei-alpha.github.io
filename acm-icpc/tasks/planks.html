@@ -1,0 +1,61 @@
+<table border="0" style="margin-left:auto;margin-right:auto;" cellspacing="10">
+    <tr><td><strong>Source</strong></td><td><a href="http://www.infoarena.ro/problema/biscuiti">Infoarena</a></td><td><strong>Author</strong></td><td>Adrian Airinei</td>
+    </tr><tr><td><strong>Time limit</strong></td><td>0.35 sec</td><td><strong>Memory limit</strong></td><td>65536 kbytes</td></tr>
+    <tr><td><strong>Added by</strong></td><td>Andrei Antonescu</td><td><strong>Difficulty</strong></td><td><span class="star-rating"><img src="http://infoarena.ro/static/images/stars/normal-full.png" alt="normal"/><img src="http://infoarena.ro/static/images/stars/normal-full.png" alt="normal"/><img src="http://infoarena.ro/static/images/stars/normal-full.png" alt="normal"/><img src="http://infoarena.ro/static/images/stars/normal-full.png" alt="normal"/><img src="http://infoarena.ro/static/images/stars/normal-empty.png" alt="normal"/><div class='hidden'>4/5</div></span></td></tr>
+</table>
+
+
+<center><h2>Problem Planks</h2></center>
+
+<p>The fence of Britain's top Chemical Engineering Factory has proved
+to be unsecure. Thus, the management has decided to fix it by contracting two
+unskilled workers. Arrived at the scene, the workers found that the fence is
+made up of N boards (numbered 1, 2, 3 ... N from left to right). Moreover,
+each board is of different height. Following, they determined that the first
+thing to do is to remove the N boards. Thus, over the next N days they
+remove the smallest board. As the workers progress with their work,
+they realize something rather bizarre. If in day T they removed
+the plank from position X, the height of all planks to the left of X
+increased with T units.
+  
+<h3>Requirement</h3>
+Find the difference between the height of the removed planks and the
+height of the initial planks.
+
+<h3>Input</h3>
+<p>The first line of the input contains N.
+Then N lines follow, on line i is the initial height of plank i-1.
+
+<h3>Restrictions</h3>
+<li>1 &le; <i>N</i> &le; 100.000</li>
+<li>1 &le; <i>Xi</i> &le; 1.000, <i>Xi</i> is the initial height of plank i</li>
+<li>If they have to choose from more planks of equal height,
+the workers will choose the left most one</li>
+<li>The first day is day 1</li>
+<li>Plank <i>i</i> (i &ge; 2) has in it`s left planks <i>1, 2, 3 ... i-1</i> </li>
+
+<h3>Output</h3> 
+<p>The first line of output should contain the required number K.
+
+<h3>Sample Input</h3>
+<pre>
+7 
+9 
+10
+6
+6
+4
+9
+8
+</pre>
+<h3>Sample Output</h3>
+<pre>
+36
+</pre>
+
+<h3><a href="">Test Cases</a></h3>
+<br></br>
+
+<center>
+<img width = "200px" height = "50px" src="http://www3.imperial.ac.uk/2007templates/images/logo_imperial_college_london.png"></img>
+</center>

@@ -1,0 +1,157 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name=viewport content="width=600, initial-scale=1">
+    <title>Tell me something</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <style type="text/css">
+      * {
+        margin: 0;
+      }
+      body {
+        font-family: "Linux Libertine O";
+        font-size: 120%;
+        background: black;
+        color: #fff;
+        height: 100%;
+      }
+      a, a:link, a:visited {
+        color: #555;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
+      #namepane {
+        position: fixed;
+        top: 0;
+        right: 0;
+        font-size: .85em;
+        color: #555;
+        text-align: right;
+      }
+      #outer {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        display: table;
+        position: fixed;
+        z-index: -1;
+      }
+      #middle {
+        display: table-cell;
+        vertical-align: top;
+        visibility: hidden;
+      }
+      #bottom {
+        display: table-cell;
+        vertical-align: bottom;
+      }
+      #id {
+        color: #fff;
+        margin: .03em;
+      }
+      .contact {
+        font-size: .9em;
+        color: #555;
+      }
+      #hoverme-id {
+        padding: 3em;
+      }
+      .hoverme {
+        padding: .5em;
+      }
+      .hoverme:hover * {
+        color: #fff;
+      }
+      #tellpane {
+        color: #555;
+        top: .1em;
+        cursor: pointer;
+      }
+      .tellinput {
+        font-size: 1.5em;
+        width: 80%;
+        border-radius: 500px;
+        padding: 0.1em 0.5em;
+        background-color: inherit;
+        border: 2px solid;
+        color: #A0A0A0;
+      }
+      #logo {
+        position: fixed;
+        z-index: -2;
+      }
+      @-webkit-keyframes fadeout{
+        0%{opacity:1;visibility:visible;}
+        99%{opacity:0;}
+        100%{opacity:0;visibility: hidden;}
+      }
+      .fadeout {
+        -webkit-animation:fadeout 1s linear;
+        visibility:hidden;
+      }
+      @-webkit-keyframes fadein{
+        0%{opacity:0;visibility:visible;}
+        100%{opacity:1;}
+      }
+      .fadein {
+        -webkit-animation:fadein 1s linear;
+        visibility:visible;
+      }
+      p {
+        padding: 1.5em;
+      }
+    </style>
+  </head>
+  <body onload="load()">
+    <div class="hoverme" id="namepane">
+      <p id="name">Andrei Antonescu</p>
+    </div>
+    <div id="outer">
+      <div id="middle">
+        <div class="hoverme" id="hoverme-id">
+          <span id="id">words</span>
+        </div>
+        <form class="hoverme" id="tellpane" action="http://node-video.herokuapp.com/text" method="POST">
+          <input type="text" class="tellinput" maxlength="150" name="text" autocomplete="off" />
+        </form>
+      </div>
+      <div id="bottom">
+        <p class="linkline">
+          <a href="http://www.andreibantonescu.com">back</a>
+        </p>
+      </div>
+    </div>
+    <img src="logo.png" id="logo" />
+  </body>
+<script src='http://code.jquery.com/jquery-1.11.2.min.js'></script>
+<script type="text/javascript">
+  function load() {
+    logo();
+    quote();
+  }
+  function logo() {
+    var logoimg = document.getElementById('logo');
+    logoimg.style.top = parseInt( Math.random() * (window.innerHeight - logoimg.height) ) + 'px';
+    logoimg.style.left = parseInt( Math.random() * (window.innerWidth - logoimg.width) ) + 'px';
+    logoimg.style.visibility = 'visible';
+  }
+  function quote() {
+    $.getJSON("quotes.json", function(data) {
+      var quote = data.quotes[Math.floor(Math.random() * data.quotes.length)];
+      $('#id').css('font-size', (300 - quote.body.length) / 80 + 'em');
+      $('#id').html('”' + quote.body + '” <span id="author"><i>' + quote.source + "</i></span>");
+      $('#author').css('font-size', (300 - quote.body.length) / 300 + 'em');
+
+      $('#middle').addClass("fadein");
+      setTimeout(function(){ $('#middle').css("visibility", "visible"); }, 1000);
+    });
+  }
+</script>
+</html>
+

@@ -1,0 +1,48 @@
+body  {
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    background: #666666;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #000000;
+}
+#container { 
+    width: 80%; 
+    background: #FFFFFF;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    text-align: left;
+} 
+#header { 
+    background: #DDDDDD; 
+    padding: 0 10px; 
+} 
+#header h1 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+#content { 
+    margin: 0 20px 0 13em;
+}
+
+#sidebar1 {
+    float: left; 
+    width: 12.2em;
+    background: #EBEBEB; 
+    padding: 15px 0;
+}
+
+#footer {
+    : 64px 0 0 0;
+    padding: 10px 0; 
+    background:#DDDDDD;
+} 
+#footer p {
+    margin: 0; 
+    padding: 10px 0;
+}
+
+#marmot{
+    float: right;
+}

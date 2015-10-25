@@ -1,0 +1,159 @@
+CTYPE html>
+<head>
+  <title>highlight.js test</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" title="Default" href="http://yandex.st/highlightjs/6.1/styles/school_book.min.css">
+  <style>
+    body {
+      font: small Arial, sans-serif;
+    }
+    h2 {
+      font: bold 100% Arial, sans-serif;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+    }
+    table {
+      width: 100%; padding: 0; border-collapse: collapse;
+    }
+    th {
+      width: 12em;
+      padding: 0; margin: 0;
+    }
+    td {
+      padding-bottom: 1em;
+    }
+    td, th {
+      vertical-align: top;
+      text-align: left;
+    }
+    pre {
+      margin: 0; font-size: medium;
+    }
+    #switch {
+      overflow: auto; width: 57em;
+      list-style: none;
+      padding: 0; margin: 0;
+    }
+    #switch li {
+      float: left; width: 10em;
+      padding: 0.1em; margin: 0.1em 1em 0.1em 0;
+      background: #EEE;
+      cursor: pointer;
+    }
+    #switch li.current {
+      background: #CCC;
+      font-weight: bold;
+    }
+    .test {
+      color: #888;
+      font-weight: normal;
+      margin: 2em 0 0 0;
+    }
+    .test var {
+      font-style: normal;
+    }
+    .passed {
+      color: green;
+    }
+    .failed {
+      color: red;
+    }
+    .code {
+      font: medium monospace;
+    }
+    .code .keyword {
+      font-weight: bold;
+    }
+  </style>
+
+  <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+  <script>
+  hljs.tabReplace = '    ';
+  hljs.initHighlightingOnLoad();
+  </script>
+</head> 
+ 
+<body>
+
+<h1>Java code for segment Trees</h1>
+
+<tr>
+    <th>Java code
+    <td class="java">
+<pre><code>
+package turtle.util;
+import turtle.*;
+
+public class Utils {
+	
+	private static final int moveY[] = {1,1,0,-1,-1,-1,0,1,0};
+	private static final int moveX[] = {0,1,1,1,0,-1,-1,-1,0};
+	private static final int TOTAL_DIR = 8;
+	
+	public enum Types{
+		NORMAL,
+		CONTINUOUS,
+		BOUNCY,
+		REFLECTING,
+		WRAPPING,
+	}
+	
+	public static Position move(Position pos, int dir) {
+		return new Position(pos.X + moveX[dir], pos.Y + moveY[dir]);
+	}
+	
+	public static int findMove(int x, int y) {
+		for(int i = 0;i < 8;++i) {
+			if(moveX[i] == x && moveY[i] == y)
+				return i;
+		}
+		return 8; //nothing found
+	}
+	
+	//A turtle has a position, a ref to the paper and a dir indice of moveX and moveY
+	public static void outside(Turtle turtle) {
+		Position pos = turtle.getPosition();
+		int dir = turtle.getDirection();
+		Position newPos = turtle.getPosition();
+		int newDir = turtle.getDirection();
+		
+		switch(Types.valueOf((turtle.getType().toUpperCase() ) ) ) {
+			case NORMAL:
+				newPos = move(pos, (dir + 4) % TOTAL_DIR);
+				break;
+			case BOUNCY:
+				newDir = (dir + 4) % TOTAL_DIR;
+				newPos = move(pos, newDir);
+				break;
+			case REFLECTING:
+				int newMoveX = moveX[dir];
+				int newMoveY = moveY[dir];
+				
+				if( pos.Y &lt; 0 || pos.Y &ge; turtle.getPaperHeight() ) {
+					newMoveY *= -1; 
+					pos.X -= moveX[dir]; //light ray effect
+				}
+				if( pos.X &lt; 0 || pos.X &ge; turtle.getPaperWidth() ) {
+					newMoveX *= -1;
+					pos.Y -= moveY[dir]; //light ray effect
+				}
+				
+				newDir = findMove(newMoveX, newMoveY);
+				newPos = move(pos, newDir);
+				break;
+			case WRAPPING:
+				newPos.X = (newPos.X + turtle.getPaperWidth() ) % turtle.getPaperWidth() ;
+				newPos.Y = (newPos.Y + turtle.getPaperHeight() ) % turtle.getPaperHeight();
+				break;
+			default: //CONTINOUS
+		}
+		
+		turtle.setPosition(newPos);
+		turtle.setDirection(newDir);
+	}
+}
+
+</code></pre>
+</body>
+
+

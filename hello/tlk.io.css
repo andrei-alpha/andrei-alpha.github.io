@@ -1,0 +1,12 @@
+#tlkio {
+  background: white;
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+  right: 2px;
+  box-shadow: 2px 2px 20px #888888;
+}
+
+.header-bar {
+  background-color: gray;
+}

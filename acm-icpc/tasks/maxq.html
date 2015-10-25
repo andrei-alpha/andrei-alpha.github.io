@@ -1,0 +1,69 @@
+<table border="0" style="margin-left:auto;margin-right:auto;" cellspacing="10">
+    <tr><td><strong>Source</strong></td><td><a href="http://www.infoarena.ro/problema/maxq">Infoarena</a></td><td><strong>Author</strong></td><td>Daniel Pasaila</td>
+    </tr><tr><td><strong>Time limit</strong></td><td>1 sec</td><td><strong>Memory limit</strong></td><td>32768 kbytes</td></tr>
+    <tr><td><strong>Added by</strong></td><td>Andrei Antonescu</td><td><strong>Difficulty</strong></td><td><span class="star-rating"><img src="http://infoarena.ro/static/images/stars/normal-full.png" alt="normal"/><img src="http://infoarena.ro/static/images/stars/normal-full.png" alt="normal"/><img src="http://infoarena.ro/static/images/stars/normal-full.png" alt="normal"/><img src="http://infoarena.ro/static/images/stars/normal-empty.png" alt="normal"/><img src="http://infoarena.ro/static/images/stars/normal-empty.png" alt="normal"/><div class='hidden'>3/5</div></span></td></tr>
+</table>
+
+<center><h2>Problem MaxQ</h2></center>
+
+Will is playing a game with an array of numbers. He has an initial array V
+made of N integers (numbered from 0 to N-1) and can perform the following
+operations:
+<br></br>
+<li>Change the value stored on position p with another integer</li>
+<li>Finding the subsequence of maximum sum between indices a and b;
+   
+<h3>Requirement</h3>
+Help Will to perform the operations quickly.
+
+<h3>Input</h3>
+Input contains on the first line number N representing the size
+of the array. On the next line there are N elements of the array
+representing the initial values. The next line contains M,
+representing the number of operations.
+On each of these M lines the M operations are described in the following
+form:
+
+<li><i>0 i p</i>: the value on position i takes value p</li>
+<li><i>1 a b</i>: your program has to find the maximum sum subsequence
+between a and b (a &le; b);
+
+<h3>Restrictions</h3>
+<li>1 &le; <i>N</i> &le; 200 000;</li>
+<li>1 &le; <i>M</i> &le; 200 000;</li>
+<li>All the numbers in the array belong to the interval [-100 000, 100,000];</li>
+<li>We define a subsequence as a set of consecutive terms of vector and its sum what is obtained by adding the elements that compose it;</li>
+<li>There is at least one question.</li>
+<li>For 20% of the points is guaranteed <i>N</i> &le; 5000</li>
+
+<h3>Output</h3> 
+Output must contain a number of lines equal to the number of questions
+from the input. Each line is required to display a single number
+representing the maximum sum that can be achieved in the context
+of the question (i = 1,2,...); from input. Where there is a negative sum
+display 0.
+
+<h3>Sample Input</h3>
+<pre>
+5
+1 -10 4 -1 9
+4
+1 0 3
+0 1 1
+1 0 3
+1 2 4
+</pre>
+<h3>Sample Output</h3>
+<pre>
+4
+6
+12
+</pre>
+
+<h3><a href="">Test Cases</a></h3>
+
+<br></br>
+
+<center>
+<img width = "200px" height = "50px" src="http://www3.imperial.ac.uk/2007templates/images/logo_imperial_college_london.png"></img>
+</center>
