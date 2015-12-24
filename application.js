@@ -12,8 +12,10 @@ function send(data) {
 }
 
 function getInfo() {
-
     var res = $('#data').html()
+    if (!res)
+      return;
+
     res = res.replace(/&nbsp;/g," ")
     res = res.replace(/<tr>/g,"")
     res = res.replace(/<\/tr>/g,"")

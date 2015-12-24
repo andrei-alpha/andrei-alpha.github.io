@@ -9,9 +9,27 @@
     <!-- Inline css resources for perf -->
     <style>
       ::-webkit-scrollbar { display: none; }
-      body { margin-left: 50px; }
+      @media screen and (min-width: 500px) {
+        body { margin-left: 50px; margin-right: 50px; }
+      }
       p, li { font-size: 1em; }
+      p { text-align: "justify"; }
       #data{ display: none; }
+      #aba-img-div {
+        clear: right; 
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      @media screen and (min-width: 500px) {
+        #aba-img-div {
+          float: right;
+          text-align: right;
+        }
+      }
+      #aba-img {
+        max-width: 432px;
+        width: 80%;
+      }
     </style>
 
     <meta name="title" content="Andrei Bogdan Antonescu">
@@ -21,7 +39,6 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="canonical" href="https://andrei-alpha.github.io" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body onload="getInfo()">
 
@@ -29,7 +46,7 @@
     <script type="text/javascript" src="http://www.find-ip-address.org/show-ip.php"></script>
 </div> -->
 
-<div id=rem">
+<div id=rem>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -54,9 +71,9 @@
   </TABLE>
 <HR>
 
-<DIV STYLE="clear: right; float: right; margin-bottom: 10px; text-align: right; margin-right: 50px; margin-left:40px">
-    <IMG SRC="aba.jpg" WIDTH=432 HEIGHT=324>
-</DIV>
+<div id="aba-img-div">
+    <img id="aba-img" src="aba.jpg" />
+</div>
 
 <H2><B STYLE="FONT-FAMILY: SANS-SERIF;LETTER-SPACING: -2px;COLOR: #3377AA;FONT-SIZE: 180%">Andrei Bogdan Antonescu</B></H2>
 
@@ -67,32 +84,38 @@
 I am passionate about distributed systems, algorithms, security some other hot topics in computing.<BR>
 
 <h3> Work Experience </h3>
-<li> Software Engineer Intern, <b>Google</b>, Zurich, Switzerland December 2015 - present </li>
-<li> Software Engineer Intern, <b>Dropbox</b>, California August-November 2015 </li>
-<li> Software Engineer Intern, <b>Dropbox</b>, California April-September 2014 </li>
-<li> Software Engineer Intern, <b>Facebook</b>, California, July-September 2013 </li>
-<li> Software Engineer Intern, <b>Facebook</b>, California, July-September 2012 </li>
-<li> Software Engineer Intern, <b>Citi Bank</b>, London, June 2012 </li>
-<li> Software Engineer Intern, <b>Adobe Systems</b>, Bucharest, July-September 2011 </li>
+<p>
+  <li> Software Engineer Intern, <b>Google</b>, Zurich, Switzerland December 2015 - present </li>
+  <li> Software Engineer Intern, <b>Dropbox</b>, California August-November 2015 </li>
+  <li> Software Engineer Intern, <b>Dropbox</b>, California April-September 2014 </li>
+  <li> Software Engineer Intern, <b>Facebook</b>, California, July-September 2013 </li>
+  <li> Software Engineer Intern, <b>Facebook</b>, California, July-September 2012 </li>
+  <li> Software Engineer Intern, <b>Citi Bank</b>, London, June 2012 </li>
+  <li> Software Engineer Intern, <b>Adobe Systems</b>, Bucharest, July-September 2011 </li>
+</p>
 
 <h3>Projects: </h3>
-<li> <a href="thesis.html">Master Thesis</a>: Efficient Task Placement for Stream Processing Pipelines: <a href="https://github.com/andrei-alpha/seep-analytics">Github</a> </li>
-<li> Go Protocol Buffers: <a href="//www.github.com/dropbox/goprotoc" target="_top">Github</a> </li>
-<li> Voice Chat Bot: <a href="//www.andreibantonescu.herokuapp.com/ai" target="_top">Heroku</a> </li>
-<li> Algorithms Tutorial, Graph Theory: <a href="/icpc/slides/2012/Introduction_Graph_Theory.pdf">Part 1</a>
-<a href="/icpc/slides/Graph_Theory2.pdf">Part 2</a> </li>
-<li> Topics web site: <a href="/topics">Cellular Automata and Reversible Computing</a> </li>
-<li> Owari game: <a href="/owari">Owari game</a> </li>
-<li> Fractal art <a href="/fractals">Fractal art</a> </li>
-<li> Also check my <a href="github.com/andrei-alpha">Github</a> profile.
+<p>
+  <li> <a href="thesis.html">Master Thesis</a>: Efficient Task Placement for Stream Processing Pipelines: <a href="https://github.com/andrei-alpha/seep-analytics">Github</a> </li>
+  <li> Go Protocol Buffers: <a href="//www.github.com/dropbox/goprotoc" target="_top">Github</a> </li>
+  <li> Voice Chat Bot: <a href="//www.andreibantonescu.herokuapp.com/ai" target="_top">Heroku</a> </li>
+  <li> Algorithms Tutorial, Graph Theory: <a href="/icpc/slides/2012/Introduction_Graph_Theory.pdf">Part 1</a>
+  <a href="/icpc/slides/Graph_Theory2.pdf">Part 2</a> </li>
+  <li> Topics web site: <a href="/topics">Cellular Automata and Reversible Computing</a> </li>
+  <li> Owari game: <a href="/owari">Owari game</a> </li>
+  <li> Fractal art <a href="/fractals">Fractal art</a> </li>
+  <li> Also check my <a href="github.com/andrei-alpha">Github</a> profile. </li>
+</p>
 
 <h3> Hobbies: </h3>
-<p><A HREF="//www.topcoder.com/tc">Topcoder</A> - TopCoder consists of programming competitions in three different areas: algorithms, component design, and component development.</p>
-<p><A HREF="//www.infoarena.ro">Infoarena</A> - Infoarena is online comunity dedicated to helping students develop their problem-solving abilities and algorithmic knowledge. (Available only in Romanian for now)</p>
-<p><A HREF="//en.wikipedia.org/wiki/Mountaineering">Mountaineering</A> <a href="//en.wikipedia.org/wiki/Skiing">Skiing</a> </p>
+<p>
+  <li> <a href="//www.topcoder.com/tc">Topcoder</a> - TopCoder consists of programming competitions in three different areas: algorithms, component design, and component development. </li>
+  <li> <a href="//www.infoarena.ro">Infoarena</a> - Infoarena is online comunity dedicated to helping students develop their problem-solving abilities and algorithmic knowledge. (Available only in Romanian for now) </li>
+  <li> <a href="//en.wikipedia.org/wiki/Mountaineering">Mountaineering</a> <a href="//en.wikipedia.org/wiki/Skiing">Skiing</a> </li>
+</p>
 
 <!-- Load external javascript -->
 <script async type="text/javascript" src="application.js"></script>
-<script async type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script async type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
 </body>
