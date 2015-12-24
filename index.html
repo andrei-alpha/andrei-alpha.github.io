@@ -6,12 +6,20 @@
       window.location.protocol = "https";
     </script>
 
+    <!-- Inline css resources for perf -->
+    <style>
+      ::-webkit-scrollbar { display: none; }
+      body { margin-left: 50px; }
+      p, li { font-size: 1em; }
+      #data{ display: none; }
+    </style>
+
     <meta name="title" content="Andrei Bogdan Antonescu">
     <meta name="description" content="About me, Andrei Antonescu">
     <meta name="keywords" content="Antonescu,Andrei,Bogdan,About,Projects,Hobbies">
+    <meta name="language" content="english"> 
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
-    <script type="text/javascript" src="application.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="canonical" href="https://andrei-alpha.github.io" />
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -52,7 +60,7 @@
 
 <H2><B STYLE="FONT-FAMILY: SANS-SERIF;LETTER-SPACING: -2px;COLOR: #3377AA;FONT-SIZE: 180%">Andrei Bogdan Antonescu</B></H2>
 
-Email: andrei DOT antonescu11 AT imperial DOT ac DOT uk<BR></P>
+<p>Email: andrei DOT antonescu11 AT imperial DOT ac DOT uk<BR></p>
 
 <H3> About: </H3>
 <p> I received a MEng in Summer 2015 from <a href="https://www.imperial.ac.uk/computing">Computer Science</a> department of Imperial College London.
@@ -82,5 +90,9 @@ I am passionate about distributed systems, algorithms, security some other hot t
 <p><A HREF="//www.topcoder.com/tc">Topcoder</A> - TopCoder consists of programming competitions in three different areas: algorithms, component design, and component development.</p>
 <p><A HREF="//www.infoarena.ro">Infoarena</A> - Infoarena is online comunity dedicated to helping students develop their problem-solving abilities and algorithmic knowledge. (Available only in Romanian for now)</p>
 <p><A HREF="//en.wikipedia.org/wiki/Mountaineering">Mountaineering</A> <a href="//en.wikipedia.org/wiki/Skiing">Skiing</a> </p>
+
+<!-- Load external javascript -->
+<script async type="text/javascript" src="application.js"></script>
+<script async type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 </body>
