@@ -1,8 +1,0 @@
-SSLrequireSSL
-AuthType KerberosV5
-AuthName "Restricted Access"
-Require valid-user
-
-DirectoryIndex index.html
-
-ErrorDocument 403 https://www.doc.ic.ac.uk/~aba111/error.html
