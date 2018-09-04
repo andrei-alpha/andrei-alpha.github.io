@@ -10,6 +10,35 @@ $("#rent_input").change(function() {
   formatNumber("#rent_input")
 });
 
+$("#period_input").change(function() {
+  var val = parseNumber($("#period_input").val());
+  $("#period_input").val(numberWithCommas(val) + " years")
+});
+
+$("#downpayment_input").change(function() {
+  formatPercentage("#downpayment_input")
+});
+
+$("#interest_input").change(function() {
+  formatPercentage("#interest_input")
+});
+
+$("#tax_input").change(function() {
+  formatPercentage("#tax_input")
+});
+
+$("#utilities_input").change(function() {
+  formatPercentage("#utilities_input")
+});
+
+$("#rental_input").change(function() {
+  formatPercentage("#rental_input")
+});
+
+$("#inputed_input").change(function() {
+  formatPercentage("#inputed_input")
+});
+
 $("#calculate").click(function() {
 	var partial_payment = 0.35;
 	var months_in_year = 12;
@@ -75,6 +104,11 @@ const parseNumber = (text) => {
 const formatNumber = (id) => {
 	var val = parseNumber($(id).val());
   $(id).val(numberWithCommas(val) + " chf")
+}
+
+const formatPercentage = (id) => {
+	var val = parseNumber($(id).val());
+  $(id).val(numberWithCommas(val) + "%")
 }
 
 const outputNumber = (raw_number) => {
