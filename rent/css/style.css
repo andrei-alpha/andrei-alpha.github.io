@@ -1,0 +1,95 @@
+html{ height: 100%; }
+body {
+  margin: 0px 0 0;
+  background-image: url("/img/background.jpg");
+  background-color: #cccccc;
+  font-family: 'Roboto', sans-serif;
+}
+table
+{
+  display: none;
+  border: 1px solid #EEEEEE;
+  background-color: #FFFFFF; 
+  box-shadow: 1px 1px 0 #DDDDDD;
+  font-family: 'Marck Script',cursive;
+  font-size: 22px;
+  line-height: 43px;
+  margin: 2% auto;
+  padding: 0px 5px 0 70px;
+  resize: none;
+  min-height: 400px;
+  width: 570px;
+  
+  background-image: -moz-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0px), -moz-radial-gradient(4% 50%, circle closest-corner, #f5f5f5, #f5f5f5 39%, transparent 0%), -moz-radial-gradient(3.9% 46% , circle closest-corner, #CCCCCC, #CCCCCC 43.5%, transparent 0%); 
+  background-image: -webkit-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0), -webkit-radial-gradient(4% 50%, circle closest-corner, #f5f5f5, #f5f5f5 39%, transparent 0%), -webkit-radial-gradient(3.9% 46%, circle closest-corner, #cccccc, #cccccc 43.5%, transparent 0%);
+  
+  -webkit-background-size:  100% 50px;
+  background-size: 100% 50px;
+}
+td {
+  white-space: nowrap
+}
+input, select {
+  width: 185px;
+  padding: 6px 20px;
+  margin: 0px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: right; 
+  font-family: 'Marck Script',cursive;
+  font-size: 19px;
+}
+button {
+  padding: 10px;
+  margin-top:  4px;
+  background-color: #6a7d39;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin:0 auto;
+  display:block;
+}
+button:hover {
+  background-color: #61703b;
+  border: 1px solid #1d1e1a;
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  height: 31px;
+  width: 31px;
+  background-image: url("/img/sprite.png");
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #e1e4e8;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 15px;
+  border-style: outset;
+  border-radius: 6px;
+  white-space: pre-wrap;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%; 
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
