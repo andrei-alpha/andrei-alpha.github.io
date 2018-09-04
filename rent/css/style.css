@@ -1,7 +1,7 @@
 html{ height: 100%; }
 body {
   margin: 0px 0 0;
-  background-image: url("img/background.jpg");
+  background-image: url("images/rent-background.jpg");
   background-color: #cccccc;
   font-family: 'Roboto', sans-serif;
 }
@@ -64,7 +64,7 @@ button:hover {
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
   height: 31px;
   width: 31px;
-  background-image: url("img/sprite.png");
+  background-image: url("images/sprite.png");
 }
 
 /* Tooltip text */
