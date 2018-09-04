@@ -1,7 +1,7 @@
 html{ height: 100%; }
 body {
   margin: 0px 0 0;
-  background-image: url("images/rent-background.jpg");
+  background-image: url("img/background.jpg");
   background-color: #cccccc;
   font-family: 'Roboto', sans-serif;
 }
@@ -11,7 +11,7 @@ table
   border: 1px solid #EEEEEE;
   background-color: #FFFFFF; 
   box-shadow: 1px 1px 0 #DDDDDD;
-  font-family: 'Marck Script',cursive;
+  font-family: 'Roboto', sans-serif;
   font-size: 22px;
   line-height: 43px;
   margin: 2% auto;
@@ -38,7 +38,7 @@ input, select {
   border-radius: 4px;
   box-sizing: border-box;
   text-align: right; 
-  font-family: 'Marck Script',cursive;
+  font-family: 'Roboto', sans-serif;
   font-size: 19px;
 }
 button {
@@ -64,7 +64,7 @@ button:hover {
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
   height: 31px;
   width: 31px;
-  background-image: url("images/sprite.png");
+  background-image: url("img/sprite.png");
 }
 
 /* Tooltip text */
