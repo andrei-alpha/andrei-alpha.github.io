@@ -64,7 +64,7 @@ $("#calculate").click(function() {
 
 	console.log(monthly_loan, monthly_utilities, monthly_tax, monthly_interest)
 
-	result = monthly_rent - (monthly_loan + monthly_utilities + monthly_tax + monthly_interest)
+	result = monthly_rent - (monthly_utilities + monthly_tax + monthly_interest)
 	monthly_salary = (monthly_loan + monthly_utilities + monthly_tax + monthly_interest) * 3;
 	downpayment = total_price * (downpayment / 100.0);
 	monthly_cost = monthly_loan + monthly_utilities + monthly_interest;
