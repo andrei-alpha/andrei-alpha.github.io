@@ -56,16 +56,19 @@ $("#calculate").click(function() {
 
 	console.log(total_price, monthly_rent, loan_years, downpayment, interest_rate, income_tax, utilities_rate, rent_value_rate, inputed_input);
 
-	remaining_price = (total_price * (partial_payment - (downpayment / 100.0)))
-	monthly_loan = remaining_price / loan_years / months_in_year;
+	remaining_price = total_price - downpayment;
+	amortized_price = (partial_payment - (downpayment / 100.0)) * total_price;
+	monthly_loan = amortized_price / loan_years / months_in_year;
 	monthly_utilities = total_price * (utilities_rate / 100.0) / months_in_year;
 	monthly_tax = total_price * (rent_value_rate / 100.0) * (rent_inputed_rate / 100.0) * zurich_income_tax_rate / months_in_year;
 	monthly_interest = remaining_price * (interest_rate / 100.0) / months_in_year;
+	// Minimum salary for afordability is calculated based on the maximum interest rate from the last 50 years.
+	worst_monthly_interest = remaining_price * (5 / 100.0) / months_in_year;
 
 	console.log(monthly_loan, monthly_utilities, monthly_tax, monthly_interest)
 
 	result = monthly_rent - (monthly_utilities + monthly_tax + monthly_interest)
-	monthly_salary = (monthly_loan + monthly_utilities + monthly_tax + monthly_interest) * 3;
+	monthly_salary = (monthly_loan + monthly_utilities + monthly_tax + worst_monthly_interest) * 3;
 	downpayment = total_price * (downpayment / 100.0);
 	monthly_cost = monthly_loan + monthly_utilities + monthly_interest;
 	yearly_tax = monthly_tax * months_in_year;
