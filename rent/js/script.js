@@ -40,7 +40,7 @@ $("#inputed_input").change(function() {
 });
 
 $("#calculate").click(function() {
-	var partial_payment = 0.35;
+	var partial_payment = 0.33;
 	var months_in_year = 12;
 	var zurich_income_tax_rate = 0.13;
 
