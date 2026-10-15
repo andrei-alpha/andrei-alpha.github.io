@@ -28,14 +28,21 @@
         <span class="brand-name">ZuriForge<span class="brand-sub">ZRH</span></span>
       </a>
 
-      <nav>
+            <nav>
         <ul class="nav-links">
           <li><a href="../index.html" class="nav-link">Projects</a></li>
-          <li><a href="beech-purpleheart-cutting-board.html" class="nav-link active">Grid Board</a></li>
-          <li><a href="3d-cubes-board.html" class="nav-link">3D Cubes</a></li>
-          <li><a href="purpleheart-heart-serving-board.html" class="nav-link">Heart Board</a></li>
-          <li><a href="epoxy-olive-board.html" class="nav-link">Olive Epoxy</a></li>
+          <li>
+            <button class="nav-drawer-btn open-drawer-btn" aria-label="Open Workshop Build Archive">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+              <span>Build Archive</span>
+              <span class="drawer-pill">5</span>
+            </button>
+          </li>
           <li><a href="../index.html#timber" class="nav-link">Timber Library</a></li>
+          <li><a href="../index.html#craft" class="nav-link">Principles</a></li>
           <li><a href="../about.html" class="nav-link">About</a></li>
           <li><span class="nav-badge">Maker Journal</span></li>
         </ul>
@@ -582,11 +589,12 @@
     <!-- Navigation between projects -->
     <div style="margin: 4rem 0 2rem; padding: 2rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
       <div>
-        <span class="spec-label">Next Project</span>
-        <h4 style="font-size: 1.25rem;"><a href="3d-cubes-board.html" style="color: var(--text-highlight);">3D Cubes Optical Illusion Board (45×24×2.5cm) →</a></h4>
+        <span class="spec-label">Previous Project</span>
+        <h4 style="font-size: 1.25rem;"><a href="walnut-endgrain-cutting-board.html" style="color: var(--text-highlight);">← Solid Walnut End Grain Cutting Board</a></h4>
       </div>
       <div>
-        <a href="../index.html" class="btn btn-outline">Back to All Projects</a>
+        <span class="spec-label">Next Project</span>
+        <h4 style="font-size: 1.25rem;"><a href="3d-cubes-board.html" style="color: var(--text-highlight);">3D Cubes Optical Illusion Board (45×24×2.5cm) →</a></h4>
       </div>
     </div>
 
@@ -625,6 +633,7 @@
             <li><a href="3d-cubes-board.html">3D Cubes Illusion Board</a></li>
             <li><a href="purpleheart-heart-serving-board.html">Purpleheart Heart Board</a></li>
             <li><a href="epoxy-olive-board.html">Olive &amp; Epoxy River Board</a></li>
+            <li><a href="walnut-endgrain-cutting-board.html">Walnut End Grain Board</a></li>
             <li><a href="../index.html#timber">Timber Species</a></li>
             <li><a href="../about.html">About the Workshop</a></li>
           </ul>
@@ -649,5 +658,172 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <!-- Slide-Out Workshop Build Archive Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="workshop-drawer" id="workshop-drawer" aria-hidden="true" role="dialog" aria-labelledby="drawer-title">
+    <div class="drawer-header">
+      <div class="drawer-header-top">
+        <div class="drawer-title-group">
+          <span class="drawer-badge">Workshop Index</span>
+          <h2 id="drawer-title" class="drawer-title">Build Archive</h2>
+        </div>
+        <button class="drawer-close" id="drawer-close-btn" aria-label="Close Build Archive">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <p class="drawer-subtitle">
+        Documenting geometric joinery, jigs, and timber characteristics across 5 studio projects in Zürich.
+      </p>
+      <div class="drawer-filters">
+        <button class="drawer-filter-btn active" data-filter="all">All (5)</button>
+        <button class="drawer-filter-btn" data-filter="endgrain">End-Grain (3)</button>
+        <button class="drawer-filter-btn" data-filter="epoxy">Live-Edge / Epoxy (1)</button>
+        <button class="drawer-filter-btn" data-filter="art">Art Piece (1)</button>
+      </div>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Project 1: Walnut End-Grain -->
+      <a href="../projects/walnut-endgrain-cutting-board.html" class="drawer-project-card" data-category="endgrain">
+        <div class="drawer-thumb-wrap">
+          <img src="../assets/images/projects/walnut-endgrain/07-walnut-cutting-board-knife.jpg" alt="Solid Walnut End-Grain Cutting Board" class="drawer-thumb" loading="lazy">
+        </div>
+        <div class="drawer-card-info">
+          <div class="drawer-card-meta">
+            <span class="drawer-cat-tag">Heirloom End-Grain</span>
+            <span class="drawer-date">Oct 2024</span>
+          </div>
+          <h3 class="drawer-card-title">Solid Walnut End-Grain Board</h3>
+          <div class="drawer-timber-tags">
+            <span class="timber-chip">Swiss Walnut</span>
+          </div>
+          <div class="drawer-specs-line">
+            <span>450 × 270 × 25 mm</span>
+            <span>•</span>
+            <span>Juice Groove</span>
+            <span>•</span>
+            <span>Mineral Oil</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 2: Beech & Purpleheart -->
+      <a href="../projects/beech-purpleheart-cutting-board.html" class="drawer-project-card" data-category="endgrain">
+        <div class="drawer-thumb-wrap">
+          <img src="../assets/images/projects/beech-purpleheart/13-finished-oil-pop.jpg" alt="Geometric Beech & Purpleheart Board" class="drawer-thumb" loading="lazy">
+        </div>
+        <div class="drawer-card-info">
+          <div class="drawer-card-meta">
+            <span class="drawer-cat-tag">Precision Grid</span>
+            <span class="drawer-date">Oct 2024</span>
+          </div>
+          <h3 class="drawer-card-title">Beech &amp; Purpleheart Board</h3>
+          <div class="drawer-timber-tags">
+            <span class="timber-chip">European Beech</span>
+            <span class="timber-chip">Purpleheart</span>
+          </div>
+          <div class="drawer-specs-line">
+            <span>420 × 285 × 42 mm</span>
+            <span>•</span>
+            <span>Heavy Block</span>
+            <span>•</span>
+            <span>Beeswax Polish</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 3: 3D Cubes Illusion -->
+      <a href="../projects/3d-cubes-board.html" class="drawer-project-card" data-category="endgrain">
+        <div class="drawer-thumb-wrap">
+          <img src="../assets/images/projects/3d-cubes/raw/CBE460FA-1CD5-4886-A3C1-9EAA979465CC.JPG" alt="3D Tumbling Cubes Illusion Board" class="drawer-thumb" loading="lazy">
+        </div>
+        <div class="drawer-card-info">
+          <div class="drawer-card-meta">
+            <span class="drawer-cat-tag">Optical Illusion</span>
+            <span class="drawer-date">Oct 2024</span>
+          </div>
+          <h3 class="drawer-card-title">3D Tumbling Cubes Board</h3>
+          <div class="drawer-timber-tags">
+            <span class="timber-chip">Walnut</span>
+            <span class="timber-chip">Spruce</span>
+            <span class="timber-chip">Beech</span>
+          </div>
+          <div class="drawer-specs-line">
+            <span>380 × 260 × 38 mm</span>
+            <span>•</span>
+            <span>60° Rhomboid</span>
+            <span>•</span>
+            <span>Walnut Oil</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 4: Epoxy Olive Board -->
+      <a href="../projects/epoxy-olive-board.html" class="drawer-project-card" data-category="epoxy">
+        <div class="drawer-thumb-wrap">
+          <img src="../assets/images/projects/epoxy-olive-board/10-finished-olive-epoxy-board.jpg" alt="Mediterranean Olive & Epoxy River Board" class="drawer-thumb" loading="lazy">
+        </div>
+        <div class="drawer-card-info">
+          <div class="drawer-card-meta">
+            <span class="drawer-cat-tag">Live-Edge Hybrid</span>
+            <span class="drawer-date">Sep 2024</span>
+          </div>
+          <h3 class="drawer-card-title">Olive &amp; Epoxy River Board</h3>
+          <div class="drawer-timber-tags">
+            <span class="timber-chip">Century Olive</span>
+            <span class="timber-chip">Cerulean Resin</span>
+          </div>
+          <div class="drawer-specs-line">
+            <span>480 × 240 × 32 mm</span>
+            <span>•</span>
+            <span>12,000 Grit Buffed</span>
+            <span>•</span>
+            <span>Odie's Oil</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 5: Purpleheart Heart -->
+      <a href="../projects/purpleheart-heart-serving-board.html" class="drawer-project-card" data-category="art">
+        <div class="drawer-thumb-wrap">
+          <img src="../assets/images/projects/purpleheart-heart/06-finished-heart-board.jpg" alt="Purpleheart End-Grain Heart Board" class="drawer-thumb" loading="lazy">
+        </div>
+        <div class="drawer-card-info">
+          <div class="drawer-card-meta">
+            <span class="drawer-cat-tag">Bespoke Art Piece</span>
+            <span class="drawer-date">Oct 2024</span>
+          </div>
+          <h3 class="drawer-card-title">Purpleheart Heart Board</h3>
+          <div class="drawer-timber-tags">
+            <span class="timber-chip">Guyanese Purpleheart</span>
+            <span class="timber-chip">Beech Trim</span>
+          </div>
+          <div class="drawer-specs-line">
+            <span>310 × 290 × 35 mm</span>
+            <span>•</span>
+            <span>Thermal Bake</span>
+            <span>•</span>
+            <span>Holz-Butter</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="drawer-footer-stats">
+        <span>5 Completed Builds</span>
+        <span>•</span>
+        <span>Zürich Workshop</span>
+      </div>
+      <a href="../index.html#projects" class="btn btn-outline drawer-view-all-btn">
+        <span>View Full Workshop Showcase</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </aside>
+
 </body>
 </html>
