@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZuriForge — Fine Woodworking & Maker Journal</title>
-  <meta name="description" content="A maker's woodworking journal from Zürich. Documenting the craftsmanship, geometry, jigs, and step-by-step process of handcrafted end-grain cutting boards and fine timber projects.">
+  <title>ZuriForge — Fine Woodworking &amp; Maker Journal</title>
+  <meta name="description" content="A maker's woodworking journal from Zürich. Documenting the craftsmanship, geometry, jigs, and step-by-step process of handcrafted end-grain cutting boards, 3D optical illusion boards, and fine timber projects.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,10 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64x64.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
 </head>
 <body>
 
@@ -20,19 +24,17 @@
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo" aria-label="ZuriForge Home">
-        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 22L14 12l4 4L8 26l-4-4z" />
-          <path d="M14 12l6-6a2.8 2.8 0 014 4l-6 6" />
-          <path d="M19 17l9 9" />
-          <path d="M25 29l3-3" />
-        </svg>
+        <img src="assets/images/logo.png" alt="ZuriForge Logo" class="brand-icon" width="40" height="40">
         <span class="brand-name">ZuriForge<span class="brand-sub">ZRH</span></span>
       </a>
 
       <nav>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Projects</a></li>
-          <li><a href="projects/beech-purpleheart-cutting-board.html" class="nav-link">Build Log</a></li>
+          <li><a href="projects/beech-purpleheart-cutting-board.html" class="nav-link">Grid Board</a></li>
+          <li><a href="projects/3d-cubes-board.html" class="nav-link">3D Cubes</a></li>
+          <li><a href="projects/purpleheart-heart-serving-board.html" class="nav-link">Heart Board</a></li>
+          <li><a href="projects/epoxy-olive-board.html" class="nav-link">Olive Epoxy</a></li>
           <li><a href="#timber" class="nav-link">Timber Library</a></li>
           <li><a href="#craft" class="nav-link">Principles</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
@@ -62,14 +64,14 @@
         The Geometry of <em>Grain</em> &amp; Handcrafted Woodwork
       </h1>
       <p class="hero-lead">
-        Documenting the patience, precision jigs, and material science behind bespoke end-grain cutting boards and fine timber creations. A pure maker’s log exploring every cut, clamp, and oil reveal.
+        Documenting the patience, precision jigs, and material science behind bespoke geometric cutting boards and fine timber creations. A pure maker’s log exploring every cut, clamp, and oil reveal.
       </p>
       <div class="hero-actions">
-        <a href="projects/beech-purpleheart-cutting-board.html" class="btn btn-primary">
-          Explore Latest Build
+        <a href="#projects" class="btn btn-primary">
+          View Projects
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
-        <a href="#featured" class="btn btn-outline">View Specifications</a>
+        <a href="about.html" class="btn btn-outline">Workshop Philosophy</a>
       </div>
     </div>
   </section>
@@ -87,17 +89,19 @@
     </div>
   </div>
 
-  <!-- Featured Project Section -->
-  <section id="featured" class="section">
+  <!-- Featured Projects Section -->
+  <section id="projects" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-subtitle">Project 01 • Featured Build</span>
-        <h2 class="section-title">Diagonal Grid Medium Cutting Board</h2>
+        <span class="section-subtitle">Workshop Showcase</span>
+        <h2 class="section-title">Handcrafted Projects</h2>
+        <p>Documenting design, precision joinery, and the material transformations of bespoke boards.</p>
       </div>
 
-      <div class="project-card-featured">
+      <!-- Project 01: Beech & Purpleheart Grid Board -->
+      <div class="project-card-featured" style="margin-bottom: 3.5rem;">
         <div class="project-media-wrapper">
-          <span class="project-media-badge">Finished Piece</span>
+          <span class="project-media-badge">Project 01 • Finished Piece</span>
           <img src="assets/images/projects/beech-purpleheart/13-finished-oil-pop.jpg" 
                alt="Handcrafted Beech and Purpleheart diagonal grid cutting board" 
                class="project-hero-img"
@@ -110,7 +114,7 @@
             <div class="project-category">End-Grain Matrix / Kitchen Craft</div>
             <h3 class="project-title">European Beech &amp; Purpleheart Grid Board</h3>
             <p class="project-excerpt">
-              A high-contrast 45° diamond-oriented checkerboard cutting board. Constructed from European Beech (*Fagus sylvatica*) and tropical Purpleheart (*Peltogyne*) planed to 30mm × 22mm, cut to 30mm length on the miter saw (30×30×22mm), and sanded to a dead-flat 20mm final thickness.
+              A high-contrast 45° diamond-oriented checkerboard cutting board. Constructed from European Beech (<em>Fagus sylvatica</em>) and tropical Purpleheart (<em>Peltogyne</em>) planed to 30mm × 22mm, cut to 30mm length on the miter saw (30×30×22mm), and sanded to a dead-flat 20mm final thickness.
             </p>
 
             <div class="specs-grid">
@@ -141,6 +145,151 @@
           </div>
         </div>
       </div>
+
+      <!-- Project 02: 3D Cubes Optical Illusion Board -->
+      <div class="project-card-featured">
+        <div class="project-media-wrapper">
+          <span class="project-media-badge">Project 02 • Geometric Illusion</span>
+          <img src="assets/images/projects/3d-cubes/3d-cubes-hero.svg" 
+               alt="3D Cubes Optical Illusion Cutting Board" 
+               class="project-hero-img"
+               data-lightbox 
+               data-caption="3D Cubes Optical Illusion Board (45cm x 24cm x 2.5cm): Isometric tessellation of Walnut, Beech, and Spruce simulating floating three-dimensional cubes.">
+        </div>
+
+        <div class="project-content">
+          <div>
+            <div class="project-category">Optical Tessellation / Presentation Board</div>
+            <h3 class="project-title">3D Cubes Optical Illusion Board</h3>
+            <p class="project-excerpt">
+              A 45 cm × 24 cm × 2.5 cm board creating a hypnotic tumbling cubes illusion. Utilizes a strict three-value lighting gradient: dark Swiss Walnut for the shadow facet, warm European Beech for the half-tone facet, and luminous Alpine Spruce for the top highlight facet.
+            </p>
+
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Dimensions</span>
+                <span class="spec-value">45 cm × 24 cm × 2.5 cm</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Geometry</span>
+                <span class="spec-value">60° Isometric Rhomboid Matrix</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Wood Triad</span>
+                <span class="spec-value">Walnut, Beech &amp; Spruce</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Function</span>
+                <span class="spec-value">Charcuterie &amp; Presentation Board</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a href="projects/3d-cubes-board.html" class="btn btn-primary" style="width: 100%;">
+              Explore 3D Cube Geometry &amp; Technique
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 03: Purpleheart Heart Serving Board -->
+      <div class="project-card-featured" style="margin-top: 3.5rem;">
+        <div class="project-media-wrapper">
+          <span class="project-media-badge">Project 03 • Solid Timber</span>
+          <img src="assets/images/projects/purpleheart-heart/06-finished-heart-board.jpg" 
+               alt="Single-piece Purpleheart Heart Shaped Serving Board" 
+               class="project-hero-img"
+               data-lightbox 
+               data-caption="Single-Piece Purpleheart Heart Board (25cm x 15cm) with router table curved edges, 140°C thermal oxidation, and Swiss Holz-Butter beeswax finish.">
+        </div>
+
+        <div class="project-content">
+          <div>
+            <div class="project-category">Sculptural Craft / Serving Board</div>
+            <h3 class="project-title">Single-Piece Purpleheart Heart Board</h3>
+            <p class="project-excerpt">
+              A 25 cm × 15 cm heart-shaped serving board carved from a single solid piece of dense Purpleheart (<em>Peltogyne</em>). Features deeply curved edges sculpted on the router table, an oven bake between 120°C–150°C for up to 60 minutes to awaken electric violet tones, and sealed with Swiss beeswax <em>Holz-Butter</em>.
+            </p>
+
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Dimensions</span>
+                <span class="spec-value">25 cm × 15 cm</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Construction</span>
+                <span class="spec-value">Single Solid Piece (No Glue)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Edge Shaping</span>
+                <span class="spec-value">Table Router Curved Profile</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Thermal Activation</span>
+                <span class="spec-value">120°C–150°C Oven Bake (60 min)</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a href="projects/purpleheart-heart-serving-board.html" class="btn btn-primary" style="width: 100%;">
+              Read Complete Build Log &amp; Oven Bake Technique
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 04: Live-Edge Olive & Blue Mica River Board -->
+      <div class="project-card-featured" style="margin-top: 3.5rem;">
+        <div class="project-media-wrapper">
+          <span class="project-media-badge">Project 04 • Live Edge &amp; Epoxy</span>
+          <img src="assets/images/projects/epoxy-olive-board/10-finished-olive-epoxy-board.jpg" 
+               alt="Live-Edge Olive Wood and Blue Mica Epoxy River Board" 
+               class="project-hero-img"
+               data-lightbox 
+               data-caption="Live-Edge Olive Wood and Blue Mica Epoxy River Board (40cm x 30cm x 2.5cm) with 5-layer 3D pour, 1500-grit polish, and Swiss Holz-Butter finish.">
+        </div>
+
+        <div class="project-content">
+          <div>
+            <div class="project-category">Resin Hybrid / River Board</div>
+            <h3 class="project-title">Live-Edge Olive &amp; Blue Mica River Board</h3>
+            <p class="project-excerpt">
+              A 40 cm × 30 cm × 2.5 cm hybrid river board crafted from Mediterranean Olive slabs (<em>Olea europaea</em>) with natural live edges. Cast in a custom melamine mold across five separate pours (swirling blue mica base to crystal-clear top layers) for a 3D optical river effect, wet-sanded through 1500 grit, polished with micro-compounds, and sealed with Swiss <em>Holz-Butter</em>.
+            </p>
+
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Dimensions</span>
+                <span class="spec-value">40 cm × 30 cm × 2.5 cm</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Materials</span>
+                <span class="spec-value">Olive Wood &amp; Blue Mica Epoxy</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Pour Technique</span>
+                <span class="spec-value">5 Pours (Blue Base to Clear Top)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Finishing</span>
+                <span class="spec-value">1500-Grit Wet Sand &amp; Holz-Butter</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a href="projects/epoxy-olive-board.html" class="btn btn-primary" style="width: 100%;">
+              Read Complete Build Log &amp; 5-Pour Technique (10 Photos)
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -149,7 +298,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-subtitle">Material Science</span>
-        <h2 class="section-title">The Woods of This Build</h2>
+        <h2 class="section-title">The Timber Library</h2>
         <p>Combining complementary wood species requires understanding density, shrinkage coefficients, and cellular structure under knife impact.</p>
       </div>
 
@@ -162,29 +311,18 @@
             <div class="timber-scientific">Fagus sylvatica</div>
           </div>
           <p>
-            Native to Central Europe and Switzerland. Beech is renowned in traditional woodworking and food preparation for its neutral scent, tight grain, and natural antibacterial qualities. When treated with mineral oil, it deepens into a warm, creamy golden amber.
+            Native to Central Europe and Switzerland. Renowned in kitchen craft for its neutral scent, tight non-porous grain, and natural antibacterial qualities. Deepens to golden amber under oil.
           </p>
           <div class="timber-stats">
             <div>
               <span class="spec-label">Janka Hardness</span>
-              <div class="spec-value">1,450 lbf (Medium-Hard)</div>
+              <div class="spec-value">1,450 lbf</div>
             </div>
             <div>
-              <span class="spec-label">Grain Character</span>
-              <div class="spec-value">Uniform, fine pores</div>
-            </div>
-            <div>
-              <span class="spec-label">Origin</span>
-              <div class="spec-value">Central Europe / Swiss Jura</div>
-            </div>
-            <div>
-              <span class="spec-label">Culinary Safety</span>
-              <div class="spec-value">Exemplary food rating</div>
+              <span class="spec-label">Used In</span>
+              <div class="spec-value">Grid Board &amp; 3D Cubes</div>
             </div>
           </div>
-          <p style="font-size: 0.9rem; margin-bottom: 0;">
-            <strong>In this board:</strong> Forms the bright, light-reflective tiles of the checkerboard matrix, providing structural toughness and easy knife glide.
-          </p>
         </div>
 
         <!-- Purpleheart -->
@@ -195,29 +333,84 @@
             <div class="timber-scientific">Peltogyne spp.</div>
           </div>
           <p>
-            An extraordinarily dense tropical hardwood. When freshly cut in the shop, it appears a muted dull grayish-brown. Exposure to UV light and air triggers natural photochemical oxidation, blooming into a breathtaking, royal magenta-violet that intensifies upon oiling.
+            An extraordinarily dense exotic hardwood. Exposure to UV light and air triggers natural photochemical oxidation, blooming into a breathtaking, royal magenta-violet that intensifies upon oiling.
           </p>
           <div class="timber-stats">
             <div>
               <span class="spec-label">Janka Hardness</span>
-              <div class="spec-value">2,520 lbf (Ultra-Dense)</div>
+              <div class="spec-value">2,520 lbf</div>
             </div>
             <div>
-              <span class="spec-label">Grain Character</span>
-              <div class="spec-value">Straight to interlocked</div>
-            </div>
-            <div>
-              <span class="spec-label">Color Shift</span>
-              <div class="spec-value">Oxidizes to vivid purple</div>
-            </div>
-            <div>
-              <span class="spec-label">Durability</span>
-              <div class="spec-value">Extreme rot resistance</div>
+              <span class="spec-label">Used In</span>
+              <div class="spec-value">Grid Board</div>
             </div>
           </div>
-          <p style="font-size: 0.9rem; margin-bottom: 0;">
-            <strong>In this board:</strong> Provides deep chromatic drama and exceptional wear resistance along knife paths.
+        </div>
+
+        <!-- Swiss Walnut -->
+        <div class="timber-card">
+          <div class="timber-accent-bar" style="background: linear-gradient(90deg, #422b22, #1c110b);"></div>
+          <div class="timber-header">
+            <h3>Swiss Walnut</h3>
+            <div class="timber-scientific">Juglans regia</div>
+          </div>
+          <p>
+            The aristocrat of native Swiss timbers. Boasts rich, velvety dark chocolate brown tones and stable dimensional behavior. Provides the essential deep shadow in 3D illusions.
           </p>
+          <div class="timber-stats">
+            <div>
+              <span class="spec-label">Janka Hardness</span>
+              <div class="spec-value">1,010 lbf</div>
+            </div>
+            <div>
+              <span class="spec-label">Used In</span>
+              <div class="spec-value">3D Cubes Board</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alpine Spruce -->
+        <div class="timber-card">
+          <div class="timber-accent-bar" style="background: linear-gradient(90deg, #fbf8f2, #eee5d3);"></div>
+          <div class="timber-header">
+            <h3>Alpine Spruce</h3>
+            <div class="timber-scientific">Picea abies</div>
+          </div>
+          <p>
+            Native alpine softwood (Rottanne) renowned for musical tonewood resonance and luminous creamy ivory tones. Serves as the brilliant top highlight plane in 3D perspective pieces.
+          </p>
+          <div class="timber-stats">
+            <div>
+              <span class="spec-label">Janka Hardness</span>
+              <div class="spec-value">480 lbf</div>
+            </div>
+            <div>
+              <span class="spec-label">Used In</span>
+              <div class="spec-value">3D Cubes Board</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mediterranean Olive -->
+        <div class="timber-card">
+          <div class="timber-accent-bar" style="background: linear-gradient(90deg, #c49a45, #5a4521);"></div>
+          <div class="timber-header">
+            <h3>Mediterranean Olive</h3>
+            <div class="timber-scientific">Olea europaea</div>
+          </div>
+          <p>
+            Celebrated for its dramatic wild grain swirls, natural oil content, and warm golden tones with deep brown streaks. Pairs exceptionally with deep-pour epoxy rivers and live edges.
+          </p>
+          <div class="timber-stats">
+            <div>
+              <span class="spec-label">Janka Hardness</span>
+              <div class="spec-value">2,710 lbf (Ultra-Dense)</div>
+            </div>
+            <div>
+              <span class="spec-label">Used In</span>
+              <div class="spec-value">Olive &amp; Epoxy River Board</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -273,20 +466,11 @@
     <div class="container">
       <div class="section-header">
         <span class="section-subtitle">Benchwork Queue</span>
-        <h2 class="section-title">Future Workshop Projects</h2>
+        <h2 class="section-title">In Planning &amp; Prototyping</h2>
         <p>Upcoming builds in design, jig prototyping, and timber selection.</p>
       </div>
 
       <div class="timber-grid">
-        <div class="timber-card">
-          <div class="project-category">In Planning</div>
-          <h3 style="margin-bottom: 0.5rem;">3D Isometric Illusion Cutting Board</h3>
-          <p style="font-size: 0.95rem;">
-            A 60° rhomboid lamination combining Swiss Walnut, Hard Maple, and American Cherry to produce a tumbling block optical illusion.
-          </p>
-          <span class="nav-badge">Concept Stage</span>
-        </div>
-
         <div class="timber-card">
           <div class="project-category">Milling Timber</div>
           <h3 style="margin-bottom: 0.5rem;">Magnetic Live-Edge Knife Rack</h3>
@@ -303,6 +487,15 @@
             A shop-made CNC-machined phenolic squaring frame with threaded brass inserts to simplify angled and chevron board glue-ups.
           </p>
           <span class="nav-badge">Prototyping</span>
+        </div>
+
+        <div class="timber-card">
+          <div class="project-category">Design Phase</div>
+          <h3 style="margin-bottom: 0.5rem;">End-Grain Chevron Herringbone Platter</h3>
+          <p style="font-size: 0.95rem;">
+            A nested chevron herringbone serving platter combining Swiss Ash and smoked European Oak with integrated recessed brass handles.
+          </p>
+          <span class="nav-badge">CAD Drafted</span>
         </div>
       </div>
     </div>
@@ -325,10 +518,7 @@
       <div class="footer-grid">
         <div>
           <a href="index.html" class="brand-logo">
-            <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 22L14 12l4 4L8 26l-4-4z" />
-              <path d="M14 12l6-6a2.8 2.8 0 014 4l-6 6" />
-            </svg>
+            <img src="assets/images/logo.png" alt="ZuriForge Logo" class="brand-icon" width="40" height="40">
             <span class="brand-name">ZuriForge</span>
           </a>
           <p class="footer-brand-desc">
@@ -340,8 +530,10 @@
           <h4 class="footer-heading">Documentation</h4>
           <ul class="footer-links">
             <li><a href="projects/beech-purpleheart-cutting-board.html">Beech &amp; Purpleheart Board</a></li>
+            <li><a href="projects/3d-cubes-board.html">3D Cubes Illusion Board</a></li>
+            <li><a href="projects/purpleheart-heart-serving-board.html">Purpleheart Heart Board</a></li>
+            <li><a href="projects/epoxy-olive-board.html">Olive &amp; Epoxy River Board</a></li>
             <li><a href="#timber">Timber Characteristics</a></li>
-            <li><a href="#craft">Craftsmanship Principles</a></li>
             <li><a href="about.html">About the Maker</a></li>
           </ul>
         </div>

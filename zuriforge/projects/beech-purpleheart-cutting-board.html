@@ -13,6 +13,10 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="../css/style.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/images/favicon-64x64.png">
+  <link rel="apple-touch-icon" href="../assets/images/logo.png">
 </head>
 <body>
 
@@ -20,21 +24,18 @@
   <header class="site-header">
     <div class="container nav-container">
       <a href="../index.html" class="brand-logo" aria-label="ZuriForge Home">
-        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 22L14 12l4 4L8 26l-4-4z" />
-          <path d="M14 12l6-6a2.8 2.8 0 014 4l-6 6" />
-          <path d="M19 17l9 9" />
-          <path d="M25 29l3-3" />
-        </svg>
+        <img src="../assets/images/logo.png" alt="ZuriForge Logo" class="brand-icon" width="40" height="40">
         <span class="brand-name">ZuriForge<span class="brand-sub">ZRH</span></span>
       </a>
 
       <nav>
         <ul class="nav-links">
           <li><a href="../index.html" class="nav-link">Projects</a></li>
-          <li><a href="beech-purpleheart-cutting-board.html" class="nav-link active">Build Log</a></li>
+          <li><a href="beech-purpleheart-cutting-board.html" class="nav-link active">Grid Board</a></li>
+          <li><a href="3d-cubes-board.html" class="nav-link">3D Cubes</a></li>
+          <li><a href="purpleheart-heart-serving-board.html" class="nav-link">Heart Board</a></li>
+          <li><a href="epoxy-olive-board.html" class="nav-link">Olive Epoxy</a></li>
           <li><a href="../index.html#timber" class="nav-link">Timber Library</a></li>
-          <li><a href="../index.html#craft" class="nav-link">Principles</a></li>
           <li><a href="../about.html" class="nav-link">About</a></li>
           <li><span class="nav-badge">Maker Journal</span></li>
         </ul>
@@ -578,6 +579,17 @@
       </div>
     </section>
 
+    <!-- Navigation between projects -->
+    <div style="margin: 4rem 0 2rem; padding: 2rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <span class="spec-label">Next Project</span>
+        <h4 style="font-size: 1.25rem;"><a href="3d-cubes-board.html" style="color: var(--text-highlight);">3D Cubes Optical Illusion Board (45×24×2.5cm) →</a></h4>
+      </div>
+      <div>
+        <a href="../index.html" class="btn btn-outline">Back to All Projects</a>
+      </div>
+    </div>
+
   </main>
 
   <!-- Lightbox Container -->
@@ -597,10 +609,7 @@
       <div class="footer-grid">
         <div>
           <a href="../index.html" class="brand-logo">
-            <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 22L14 12l4 4L8 26l-4-4z" />
-              <path d="M14 12l6-6a2.8 2.8 0 014 4l-6 6" />
-            </svg>
+            <img src="../assets/images/logo.png" alt="ZuriForge Logo" class="brand-icon" width="40" height="40">
             <span class="brand-name">ZuriForge</span>
           </a>
           <p class="footer-brand-desc">
@@ -613,6 +622,9 @@
           <ul class="footer-links">
             <li><a href="../index.html">Featured Projects</a></li>
             <li><a href="beech-purpleheart-cutting-board.html">Beech &amp; Purpleheart Board</a></li>
+            <li><a href="3d-cubes-board.html">3D Cubes Illusion Board</a></li>
+            <li><a href="purpleheart-heart-serving-board.html">Purpleheart Heart Board</a></li>
+            <li><a href="epoxy-olive-board.html">Olive &amp; Epoxy River Board</a></li>
             <li><a href="../index.html#timber">Timber Species</a></li>
             <li><a href="../about.html">About the Workshop</a></li>
           </ul>

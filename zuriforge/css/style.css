@@ -126,10 +126,19 @@ a:hover {
 }
 
 .brand-icon {
-  width: 32px;
-  height: 32px;
-  color: var(--accent-wood);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
   flex-shrink: 0;
+  display: block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brand-logo:hover .brand-icon {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(212, 126, 75, 0.35);
 }
 
 .brand-name {
