@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initComparisonSlider();
   initLightbox();
+  initWorkshopDrawer();
 });
 
 /* Mobile Navigation */
@@ -40,9 +41,21 @@ function initComparisonSlider() {
 
   if (!container || !sliderInput || !beforeDiv || !handle) return;
 
+  const beforeImg = beforeDiv.querySelector('img');
+
+  function syncImgWidth() {
+    if (beforeImg) {
+      beforeImg.style.width = `${container.clientWidth}px`;
+    }
+  }
+
+  syncImgWidth();
+  window.addEventListener('resize', syncImgWidth);
+
   function updateSlider(val) {
     beforeDiv.style.width = `${val}%`;
     handle.style.left = `${val}%`;
+    syncImgWidth();
   }
 
   sliderInput.addEventListener('input', (e) => {
@@ -156,4 +169,80 @@ function initLightbox() {
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
   });
+}
+
+
+/* Workshop Build Archive Drawer */
+function initWorkshopDrawer() {
+  const drawer = document.getElementById('workshop-drawer');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const openBtns = document.querySelectorAll('.open-drawer-btn');
+  const closeBtn = document.getElementById('drawer-close-btn');
+  const filterBtns = document.querySelectorAll('.drawer-filter-btn');
+  const projectCards = document.querySelectorAll('.drawer-project-card');
+
+  if (!drawer || !backdrop) return;
+
+  function openDrawer() {
+    drawer.classList.add('active');
+    backdrop.classList.add('active');
+    drawer.setAttribute('aria-hidden', 'false');
+    backdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('active');
+    backdrop.classList.remove('active');
+    drawer.setAttribute('aria-hidden', 'true');
+    backdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openDrawer();
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+
+  // Category filtering inside drawer
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Clicking any drawer project card closes drawer to navigate cleanly
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
+
+  const viewAllBtn = document.querySelector('.drawer-view-all-btn');
+  if (viewAllBtn) {
+    viewAllBtn.addEventListener('click', () => {
+      closeDrawer();
+    });
+  }
 }
