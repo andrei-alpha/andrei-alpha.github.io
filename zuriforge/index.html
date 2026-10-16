@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZuriForge — Fine Woodworking &amp; Maker Journal</title>
-  <meta name="description" content="A maker's woodworking journal from Zürich. Documenting bespoke woodwork, geometric end-grain lamination, and workshop techniques. Dedicated domain: zuriforge.ch">
+  <title>Redirecting to zuriforge.ch...</title>
   
+  <!-- Immediate Search Engine & Browser Redirect -->
+  <meta http-equiv="refresh" content="0; url=https://zuriforge.ch/">
   <link rel="canonical" href="https://zuriforge.ch/">
+
+  <script>
+    // Immediately replace URL so the browser history doesn't trap the user with back-button loops
+    var target = "https://zuriforge.ch/" + window.location.search + window.location.hash;
+    window.location.replace(target);
+  </script>
 
   <style>
     * {
@@ -14,53 +21,64 @@
       margin: 0;
       padding: 0;
     }
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
+    body {
       background-color: #0c0d10;
-    }
-    #zuriforge-frame {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-    .fallback-message {
-      display: none;
       color: #f0ede6;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 4rem 1.5rem;
+      padding: 2rem;
     }
-    .fallback-message a {
-      color: #d4a373;
+    .card {
+      background: #14161b;
+      border: 1px solid #262933;
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #ffffff;
+    }
+    p {
+      color: #9da3af;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    a.btn {
+      display: inline-block;
+      background: #d4a373;
+      color: #0c0d10;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: 500;
+      transition: background 0.2s ease;
     }
-    .fallback-message a:hover {
-      text-decoration: underline;
+    a.btn:hover {
+      background: #e0b488;
     }
   </style>
-
-  <script>
-    // Forward any query parameters or hash fragments to the framed site
-    window.addEventListener('DOMContentLoaded', function() {
-      var frame = document.getElementById('zuriforge-frame');
-      if (frame && (window.location.search || window.location.hash)) {
-        frame.src = 'https://zuriforge.ch/' + window.location.search + window.location.hash;
-      }
-    });
-  </script>
 </head>
 <body>
-  <iframe id="zuriforge-frame" src="https://zuriforge.ch" title="ZuriForge" allow="fullscreen" allowfullscreen>
-    <div class="fallback-message" style="display: block;">
-      <h2>ZuriForge has moved to its dedicated website</h2>
-      <p style="margin-top: 1rem;">
-        Please visit <a href="https://zuriforge.ch">zuriforge.ch</a> directly.
-      </p>
-    </div>
-  </iframe>
+  <div class="card">
+    <h1>ZuriForge has moved</h1>
+    <p>We have moved to our dedicated domain at <strong>zuriforge.ch</strong>. You are being redirected automatically.</p>
+    <a href="https://zuriforge.ch/" class="btn" id="direct-link">Go to zuriforge.ch &rarr;</a>
+  </div>
+
+  <script>
+    // Update manual button link to preserve query/hash as well
+    document.getElementById('direct-link').href = target;
+  </script>
 </body>
 </html>
