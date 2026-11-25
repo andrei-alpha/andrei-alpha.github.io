@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monte Carlo Roulette & Strategy Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Header Bar -->
+    <header class="top-bar">
+      <div class="brand-group">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="4" />
+            <circle cx="8.5" cy="8.5" r="1.2" fill="currentColor" stroke="none" />
+            <circle cx="15.5" cy="8.5" r="1.2" fill="currentColor" stroke="none" />
+            <circle cx="8.5" cy="15.5" r="1.2" fill="currentColor" stroke="none" />
+            <circle cx="15.5" cy="15.5" r="1.2" fill="currentColor" stroke="none" />
+            <circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Monte Carlo Roulette &amp; Strategy Lab</h1>
+          <p id="variant-subtitle">European Single-Zero &bull; 2.70% House Edge</p>
+        </div>
+      </div>
+
+      <div class="variant-tabs" role="tablist" aria-label="Roulette Wheel Variant">
+        <button class="variant-tab active" data-variant="european" role="tab" aria-selected="true">European (0)</button>
+        <button class="variant-tab" data-variant="french" role="tab" aria-selected="false">French La Partage (0)</button>
+        <button class="variant-tab" data-variant="american" role="tab" aria-selected="false">American (0 &amp; 00)</button>
+      </div>
+
+      <div class="header-stats">
+        <div class="stat-item">
+          <span class="stat-label">BANKROLL</span>
+          <span class="stat-value" id="stat-bankroll">$5,000</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">TABLE STAKE</span>
+          <span class="stat-value" id="stat-stake">$0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">SESSION P&amp;L</span>
+          <span class="stat-value" id="stat-pnl">$0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">SPINS</span>
+          <span class="stat-value" id="stat-spins">0</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="pill-btn" id="btn-speed" title="Toggle Spin Animation Speed">
+          <span class="icon">&#9889;</span>
+          <span id="speed-label">Normal Spin</span>
+        </button>
+        <button class="icon-btn" id="btn-sound" title="Toggle Sound Effects" aria-label="Toggle Sound">
+          <svg id="icon-sound-on" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+          </svg>
+          <svg id="icon-sound-off" class="hidden" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <line x1="23" y1="9" x2="17" y2="15" />
+            <line x1="17" y1="9" x2="23" y2="15" />
+          </svg>
+        </button>
+        <button class="icon-btn" id="btn-rules" title="Rules &amp; Payout Reference" aria-label="Rules Reference">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+          </svg>
+        </button>
+        <button class="pill-btn" id="btn-reset" title="Reset Session">
+          <span>&#8635; Reset</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Two-Column Workspace -->
+    <main class="workspace">
+      <!-- Left Column: Felt, Wheel & Controls -->
+      <section class="table-section">
+        <div class="table-card">
+          <!-- Recent Numbers Strip -->
+          <div class="recent-strip">
+            <div class="recent-title">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span>RECENT NUMBERS</span>
+            </div>
+            <div class="recent-list" id="recent-numbers">
+              <span class="recent-placeholder">Place chips on the felt or load a strategy to begin spinning.</span>
+            </div>
+          </div>
+
+          <!-- Wheel + Interactive Felt -->
+          <div class="table-main">
+            <!-- Wheel & Last Spin Result -->
+            <div class="wheel-column">
+              <div class="wheel-wrapper">
+                <canvas id="wheel-canvas" width="320" height="320"></canvas>
+              </div>
+              <div class="result-card" id="result-card">
+                <div class="result-badge green" id="result-badge">0</div>
+                <div class="result-details">
+                  <div class="result-headline" id="result-headline">Session Reset</div>
+                  <div class="result-sub" id="result-sub">Ready with $5,000 bankroll.</div>
+                </div>
+                <button class="result-toggle" id="btn-history-toggle" title="Toggle Spin History Log">&minus;</button>
+              </div>
+              <div class="spin-log hidden" id="spin-log"></div>
+            </div>
+
+            <!-- Felt & Call Bets -->
+            <div class="felt-column">
+              <div class="felt-hint-bar">
+                <div class="felt-hint-text" id="hover-readout">
+                  Hover over any number, split line, corner, or outside box to inspect odds.
+                </div>
+                <div class="shortcut-badge"><kbd>Space</kbd> Spin</div>
+              </div>
+
+              <!-- Dynamic Roulette Grid Container -->
+              <div class="felt-board" id="felt-board"></div>
+
+              <!-- French Call Bets -->
+              <div class="call-bets-row">
+                <span class="call-bets-label">CALL BETS:</span>
+                <button class="call-btn" data-call="voisins">Voisins du Z&eacute;ro (9&times;)</button>
+                <button class="call-btn" data-call="tiers">Tiers du Cylindre (6&times;)</button>
+                <button class="call-btn" data-call="orphelins">Orphelins (5&times;)</button>
+                <button class="call-btn" data-call="jeuzero">Jeu Z&eacute;ro (4&times;)</button>
+                <button class="call-btn" id="btn-racetrack-toggle">Racetrack &plusmn;<span id="neighbour-count-label">2</span> Neighbours</button>
+              </div>
+
+              <!-- Collapsible Racetrack Panel -->
+              <div class="racetrack-panel hidden" id="racetrack-panel">
+                <div class="racetrack-header">
+                  <span>Click any pocket on the racetrack to bet Straight Up + neighbours</span>
+                  <div class="neighbour-selector">
+                    <span>Neighbours:</span>
+                    <button class="nb-btn" data-nb="1">&plusmn;1</button>
+                    <button class="nb-btn active" data-nb="2">&plusmn;2</button>
+                    <button class="nb-btn" data-nb="3">&plusmn;3</button>
+                  </div>
+                </div>
+                <div class="racetrack-pockets" id="racetrack-pockets"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Chip Tray & Action Controls -->
+          <div class="table-footer">
+            <div class="chip-rack" role="radiogroup" aria-label="Select Chip Denomination">
+              <button class="chip chip-1" data-value="1">$1</button>
+              <button class="chip chip-5" data-value="5">$5</button>
+              <button class="chip chip-25 active" data-value="25">$25</button>
+              <button class="chip chip-100" data-value="100">$100</button>
+              <button class="chip chip-500" data-value="500">$500</button>
+              <button class="chip chip-1000" data-value="1000">$1k</button>
+            </div>
+
+            <div class="table-actions">
+              <button class="action-btn" id="btn-undo" disabled>&#8630; Undo</button>
+              <button class="action-btn" id="btn-rebet" disabled>&#8635; Rebet</button>
+              <button class="action-btn" id="btn-double" disabled>2&times;</button>
+              <button class="action-btn" id="btn-clear" disabled>&#128465; Clear</button>
+              <button class="spin-btn" id="btn-spin">&#9654; SPIN WHEEL</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Session Analytics Strip (below felt card) -->
+        <div class="analytics-strip" id="analytics-strip">
+          <div class="mini-stat">
+            <span class="mini-label">WIN RATE</span>
+            <span class="mini-val" id="metric-winrate">0.0%</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-label">TOTAL WAGERED</span>
+            <span class="mini-val" id="metric-wagered">$0</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-label">PEAK BANKROLL</span>
+            <span class="mini-val" id="metric-peak">$5,000</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-label">MAX DRAWDOWN</span>
+            <span class="mini-val" id="metric-drawdown">$0</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-label">HOT / COLD</span>
+            <span class="mini-val" id="metric-hotcold">&mdash;</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Strategy Tester & Trajectory -->
+      <aside class="sidebar">
+        <!-- Strategy Tester & Auto-Runner -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="gold-icon">&#9879;</span>
+              <h2>Strategy Tester &amp; Auto-Runner</h2>
+            </div>
+            <span class="panel-meta" id="max-bet-badge">Max Bet: $1,000</span>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label for="select-strategy">Betting Strategy</label>
+              <select id="select-strategy">
+                <option value="romanovsky">Romanovsky 24+8 (86.5% Coverage)</option>
+                <option value="martingale">Martingale (Even-Money)</option>
+                <option value="reverse_martingale">Reverse Martingale / Paroli</option>
+                <option value="fibonacci">Fibonacci Progression</option>
+                <option value="dalembert">D'Alembert System</option>
+                <option value="labouchere">Labouch&egrave;re (1-2-3-4)</option>
+                <option value="oscars_grind">Oscar's Grind</option>
+                <option value="james_bond">James Bond (20-Unit Spread)</option>
+                <option value="double_dozen">Double Dozen (64.9% Coverage)</option>
+                <option value="flat">Flat Betting (1 Unit)</option>
+                <option value="custom_felt">Custom Felt Layout</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="select-even-target">Even-Money Target</label>
+              <select id="select-even-target">
+                <option value="RED">Red (1:1)</option>
+                <option value="BLACK">Black (1:1)</option>
+                <option value="EVEN">Even (1:1)</option>
+                <option value="ODD">Odd (1:1)</option>
+                <option value="LOW">1&ndash;18 Low (1:1)</option>
+                <option value="HIGH">19&ndash;36 High (1:1)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label for="select-after-loss">After Loss</label>
+              <select id="select-after-loss">
+                <option value="default">Strategy Default</option>
+                <option value="x2">Multiply &times;2.0</option>
+                <option value="x1.5">Multiply &times;1.5</option>
+                <option value="x3">Multiply &times;3.0</option>
+                <option value="plus1">Add +1 Base Unit</option>
+                <option value="fib">Fibonacci Step</option>
+                <option value="same">Keep Same Stake</option>
+                <option value="reset">Reset to 1 Base Unit</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="select-after-win">After Win</label>
+              <select id="select-after-win">
+                <option value="default">Strategy Default</option>
+                <option value="reset">Reset to 1 Base Unit</option>
+                <option value="x2">Multiply &times;2.0</option>
+                <option value="minus1">Subtract 1 Base Unit</option>
+                <option value="same">Keep Same Stake</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="strategy-desc" id="strategy-desc">
+            High-coverage 8-unit spread: 3 units on 1st Dozen, 3 units on 2nd Dozen, and 1 unit each on Corners 25-26-28-29 and 32-33-35-36 (covers 32 of 37 pockets, 86.5% hit rate).
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-field">
+              <label for="input-base-unit">Base Unit ($)</label>
+              <input type="number" id="input-base-unit" value="10" min="1" step="1" />
+            </div>
+            <div class="form-field">
+              <label for="input-start-bankroll">Start Bankroll ($)</label>
+              <input type="number" id="input-start-bankroll" value="5000" min="10" step="100" />
+            </div>
+            <div class="form-field">
+              <label for="select-table-max">Table Max ($)</label>
+              <select id="select-table-max">
+                <option value="150">$150</option>
+                <option value="250">$250</option>
+                <option value="500">$500</option>
+                <option value="1000" selected>$1,000</option>
+                <option value="2500">$2,500</option>
+                <option value="5000">$5,000</option>
+                <option value="10000">$10,000</option>
+                <option value="custom">Custom</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field hidden" id="custom-max-field">
+            <label for="input-custom-max">Custom Table Max ($)</label>
+            <input type="number" id="input-custom-max" value="1500" min="10" step="50" />
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label for="input-stop-win">Stop-Win Profit ($ &bull; optional)</label>
+              <input type="number" id="input-stop-win" placeholder="None" min="1" />
+            </div>
+            <div class="form-field">
+              <label for="input-stop-loss">Stop-Loss Drawdown ($ &bull; optional)</label>
+              <input type="number" id="input-stop-loss" placeholder="None" min="1" />
+            </div>
+          </div>
+
+          <div class="next-bet-bar">
+            <div class="next-bet-info">
+              <span>Next Strategy Bet: <strong id="next-strategy-bet">$80</strong></span>
+              <span class="prog-state" id="prog-state-label"></span>
+            </div>
+            <button class="place-felt-btn" id="btn-place-strategy">
+              &#127920; Place on Felt
+            </button>
+          </div>
+
+          <div class="runner-buttons">
+            <button class="runner-btn" id="btn-auto-spin">
+              <span id="auto-spin-icon">&#8635;</span>
+              <span id="auto-spin-label">Live Auto-Spin</span>
+            </button>
+            <button class="runner-btn" id="btn-sim-100">&#9654;&#9654; +100 Spins</button>
+            <button class="runner-btn" id="btn-sim-1000">&#9654;&#9654; +1,000 Spins</button>
+          </div>
+
+          <button class="mc-btn" id="btn-monte-carlo">
+            &#128202; 50&times;250 Monte Carlo
+          </button>
+        </div>
+
+        <!-- Bankroll Trajectory Card -->
+        <div class="panel-card chart-card">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="gold-icon">&#9605;</span>
+              <h2>Bankroll Trajectory</h2>
+            </div>
+            <div class="chart-header-actions">
+              <button class="mini-btn hidden" id="btn-clear-mc">Back to Session</button>
+              <button class="mini-btn" id="btn-export-csv">Export CSV</button>
+            </div>
+          </div>
+
+          <div class="chart-box">
+            <canvas id="chart-canvas" width="420" height="210"></canvas>
+            <div class="chart-tooltip hidden" id="chart-tooltip"></div>
+          </div>
+
+          <!-- Monte Carlo Summary Grid (shown after MC run) -->
+          <div class="mc-summary hidden" id="mc-summary">
+            <div class="mc-stat">
+              <span>MEAN FINAL</span>
+              <strong id="mc-mean">$0</strong>
+            </div>
+            <div class="mc-stat">
+              <span>PROFITABLE</span>
+              <strong id="mc-profit-rate">0%</strong>
+            </div>
+            <div class="mc-stat">
+              <span>BUST RATE</span>
+              <strong id="mc-bust-rate">0%</strong>
+            </div>
+            <div class="mc-stat">
+              <span>MEDIAN / BEST</span>
+              <strong id="mc-median-best">$0</strong>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <!-- Rules & Payouts Modal -->
+  <div class="modal-backdrop hidden" id="rules-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title">Roulette Rules, Odds &amp; Strategy Guide</h3>
+        <button class="icon-btn" id="btn-close-modal" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="rules-grid">
+          <div>
+            <h4>Inside &amp; Outside Payouts</h4>
+            <table class="odds-table">
+              <thead>
+                <tr><th>Bet Type</th><th>Numbers</th><th>Payout</th><th>Euro Hit %</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Straight Up</td><td>1</td><td>35 : 1</td><td>2.70%</td></tr>
+                <tr><td>Split</td><td>2</td><td>17 : 1</td><td>5.41%</td></tr>
+                <tr><td>Street / Trio</td><td>3</td><td>11 : 1</td><td>8.11%</td></tr>
+                <tr><td>Corner / First Four</td><td>4</td><td>8 : 1</td><td>10.81%</td></tr>
+                <tr><td>Top Line (US 0-00-1-2-3)</td><td>5</td><td>6 : 1</td><td>13.16% (US)</td></tr>
+                <tr><td>Six Line</td><td>6</td><td>5 : 1</td><td>16.22%</td></tr>
+                <tr><td>Dozen / Column</td><td>12</td><td>2 : 1</td><td>32.43%</td></tr>
+                <tr><td>Even-Money (Red/Black/etc.)</td><td>18</td><td>1 : 1</td><td>48.65%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h4>Wheel Variants &amp; Controls</h4>
+            <ul class="rules-list">
+              <li><strong>European (0):</strong> 37 pockets, 2.70% house edge across all standard bets.</li>
+              <li><strong>French La Partage (0):</strong> Returns 50% of Even-Money stakes when <code>0</code> lands (1.35% edge on even-money bets).</li>
+              <li><strong>American (0 &amp; 00):</strong> 38 pockets, 5.26% house edge (7.89% on 5-number Top Line).</li>
+              <li><strong>Controls:</strong> Left-click any number, border line, corner intersection, or outside box to place chips. Right-click (or Shift+Click) to remove a chip. Press <kbd>Space</kbd> to spin.</li>
+              <li><strong>Custom Felt Strategy:</strong> Place any pattern on the felt, select <em>Custom Felt Layout</em> in the strategy lab, and simulate progressions on your custom layout!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
