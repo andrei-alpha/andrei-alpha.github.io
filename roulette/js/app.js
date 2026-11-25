@@ -48,6 +48,7 @@ class RouletteLabApp {
     this.autoSpinning = false;
     this.isSpinning = false;
     this.mcResult = null;
+    this.numbersLimit = 120;
 
     this.sound = new SoundEffects();
     this._cacheElements();
@@ -103,6 +104,11 @@ class RouletteLabApp {
       metricPeak: document.getElementById('metric-peak'),
       metricDrawdown: document.getElementById('metric-drawdown'),
       metricHotCold: document.getElementById('metric-hotcold'),
+
+      numbersBoardGrid: document.getElementById('numbers-board-grid'),
+      numbersCountMeta: document.getElementById('numbers-count-meta'),
+      numbersColorDist: document.getElementById('numbers-color-dist'),
+      numbersLimitBtns: document.querySelectorAll('.filter-pill[data-limit]'),
 
       selectStrategy: document.getElementById('select-strategy'),
       selectEvenTarget: document.getElementById('select-even-target'),
@@ -299,6 +305,14 @@ class RouletteLabApp {
     this.el.btnMonteCarlo.addEventListener('click', () => this._runMonteCarloLab());
     this.el.btnClearMc.addEventListener('click', () => this._exitMonteCarloView());
     this.el.btnExportCsv.addEventListener('click', () => this._exportCSV());
+
+    this.el.numbersLimitBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        this.numbersLimit = Number(btn.dataset.limit);
+        this.el.numbersLimitBtns.forEach((b) => b.classList.toggle('active', b === btn));
+        this._renderNumbersBoard();
+      });
+    });
   }
 
   _getConfig() {
@@ -824,6 +838,54 @@ class RouletteLabApp {
     if (!this.mcResult) {
       this.chart.setSessionData(this.trajectory, this.startBankroll);
     }
+    this._renderNumbersBoard();
+  }
+
+  _renderNumbersBoard() {
+    const grid = this.el.numbersBoardGrid;
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    const total = this.spinHistory.length;
+    if (total === 0) {
+      this.el.numbersCountMeta.textContent = '0 spins';
+      this.el.numbersColorDist.innerHTML =
+        '<span class="dist-pill red">R 0%</span><span class="dist-pill black">B 0%</span><span class="dist-pill green">G 0%</span>';
+      const empty = document.createElement('div');
+      empty.className = 'numbers-empty';
+      empty.textContent = 'No spins yet. Spin the wheel or run a simulation to see recent numbers here.';
+      grid.appendChild(empty);
+      return;
+    }
+
+    const slice = this.numbersLimit > 0 ? this.spinHistory.slice(-this.numbersLimit) : this.spinHistory;
+    const recentFirst = [...slice].reverse();
+
+    let redCount = 0;
+    let blackCount = 0;
+    let greenCount = 0;
+    for (const r of slice) {
+      if (r.color === 'red') redCount++;
+      else if (r.color === 'black') blackCount++;
+      else greenCount++;
+    }
+
+    const n = slice.length;
+    this.el.numbersCountMeta.textContent = n === total ? `${total} spins` : `Last ${n} of ${total}`;
+    this.el.numbersColorDist.innerHTML =
+      `<span class="dist-pill red">R ${((redCount / n) * 100).toFixed(0)}%</span>` +
+      `<span class="dist-pill black">B ${((blackCount / n) * 100).toFixed(0)}%</span>` +
+      `<span class="dist-pill green">G ${((greenCount / n) * 100).toFixed(0)}%</span>`;
+
+    const frag = document.createDocumentFragment();
+    recentFirst.forEach((r, idx) => {
+      const cell = document.createElement('div');
+      cell.className = `board-num ${r.color}${idx === 0 ? ' latest' : ''}`;
+      cell.textContent = String(r.outcome);
+      cell.title = `Spin #${r.spin} • ${r.outcome} (${r.color}) • Net ${formatMoney(r.netProfit, true)}`;
+      frag.appendChild(cell);
+    });
+    grid.appendChild(frag);
   }
 
   _exportCSV() {

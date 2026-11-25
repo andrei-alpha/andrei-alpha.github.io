@@ -204,6 +204,36 @@
             <span class="mini-val" id="metric-hotcold">&mdash;</span>
           </div>
         </div>
+
+        <!-- Recent Numbers History Grid -->
+        <div class="panel-card numbers-history-card">
+          <div class="panel-header numbers-header">
+            <div class="panel-title">
+              <span class="gold-icon">&#9638;</span>
+              <h2>Recent Numbers Board</h2>
+              <span class="panel-meta" id="numbers-count-meta">0 spins</span>
+            </div>
+            <div class="numbers-controls">
+              <div class="color-dist" id="numbers-color-dist">
+                <span class="dist-pill red">R 0%</span>
+                <span class="dist-pill black">B 0%</span>
+                <span class="dist-pill green">G 0%</span>
+              </div>
+              <div class="history-filters" role="tablist" aria-label="Recent Numbers Count">
+                <button class="filter-pill" data-limit="60">60</button>
+                <button class="filter-pill active" data-limit="120">120</button>
+                <button class="filter-pill" data-limit="250">250</button>
+                <button class="filter-pill" data-limit="0">All</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="numbers-board-wrap">
+            <div class="numbers-board-grid" id="numbers-board-grid">
+              <div class="numbers-empty">No spins yet. Spin the wheel or run a simulation to see recent numbers here.</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Right Column: Strategy Tester & Trajectory -->

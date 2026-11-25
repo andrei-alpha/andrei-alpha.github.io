@@ -805,6 +805,126 @@ kbd {
   font-weight: 700;
 }
 
+/* Recent Numbers History Board */
+.numbers-history-card {
+  gap: 10px;
+}
+
+.numbers-header {
+  flex-wrap: wrap;
+}
+
+.numbers-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.color-dist {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dist-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.dist-pill.red { background: rgba(198, 40, 40, 0.55); }
+.dist-pill.black { background: rgba(23, 27, 30, 0.85); }
+.dist-pill.green { background: rgba(21, 128, 61, 0.55); }
+
+.history-filters {
+  display: flex;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.filter-pill {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-pill:hover {
+  color: var(--text-main);
+}
+
+.filter-pill.active {
+  background: rgba(234, 179, 8, 0.16);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.numbers-board-wrap {
+  width: 100%;
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  padding: 8px;
+}
+
+.numbers-board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(34px, 1fr));
+  gap: 4px;
+}
+
+.numbers-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  padding: 16px 8px;
+  font-size: 11.5px;
+}
+
+.board-num {
+  height: 26px;
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  cursor: default;
+  transition: transform 0.1s;
+}
+
+.board-num:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+.board-num.red { background: var(--red-pocket); }
+.board-num.black { background: var(--black-pocket); }
+.board-num.green { background: var(--green-pocket); }
+
+.board-num.latest {
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
 /* Sidebar Cards */
 .sidebar {
   display: flex;
